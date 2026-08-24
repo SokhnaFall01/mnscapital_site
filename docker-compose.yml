@@ -1,14 +1,14 @@
 # =========================================================================
-# MNS CAPITAL — Déploiement Docker derrière Traefik
+# MNS CAPITAL — Déploiement Docker derrière Caddy
 #
-# Ce service s'ajoute à votre serveur SANS toucher aux autres sites :
-# Traefik route le nom d'hôte sslip.io vers ce conteneur.
+# Ce service s'ajoute à votre serveur SANS toucher à la stack « radia-glam ».
+# Il rejoint le réseau Docker existant « radia-glam_default » pour que votre
+# Caddy puisse l'atteindre par son nom « mnscapital ».
 #
-# AVANT DE LANCER, adaptez 3 choses :
-#   1. Le nom d'hôte sslip.io (remplacez VOTRE-IP par l'IP publique du serveur,
-#      ex. 203.0.113.45  ->  mnscapital.203.0.113.45.sslip.io)
-#   2. Le nom du réseau Docker de Traefik (ici « proxy » — voir DEPLOIEMENT.md)
-#   3. Les identifiants dans le fichier .env (ADMIN_PASSWORD, SESSION_SECRET)
+# Le routage du nom d'hôte se fait dans le Caddyfile (voir DEPLOIEMENT.md) :
+#     mnscapital.167.233.231.68.sslip.io  →  reverse_proxy mnscapital:3000
+#
+# AVANT DE LANCER : renseignez ADMIN_PASSWORD et SESSION_SECRET dans .env
 # =========================================================================
 
 services:
@@ -21,30 +21,14 @@ services:
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:?Definissez ADMIN_PASSWORD dans .env}
       - SESSION_SECRET=${SESSION_SECRET:?Definissez SESSION_SECRET dans .env}
     volumes:
-      # Persistance : le contenu et les images téléversées survivent aux
-      # redémarrages / reconstructions du conteneur.
+      # Persistance : contenu et images téléversées conservés au redémarrage.
       - ./content.json:/app/content.json
       - ./public/assets/img:/app/public/assets/img
     networks:
-      - proxy
-    labels:
-      - "traefik.enable=true"
-      # Réseau Docker par lequel Traefik joint ce conteneur (= nom ci-dessous)
-      - "traefik.docker.network=proxy"
-      # ---- Nom d'hôte d'accès (À ADAPTER) ----
-      - "traefik.http.routers.mnscapital.rule=Host(`mnscapital.VOTRE-IP.sslip.io`)"
-      - "traefik.http.routers.mnscapital.entrypoints=web"
-      - "traefik.http.services.mnscapital.loadbalancer.server.port=3000"
-      # ---- HTTPS (optionnel) : à activer si votre Traefik a un « certresolver »
-      #      (remplacez « letsencrypt » par le nom de votre resolver) ----
-      # - "traefik.http.routers.mnscapital-secure.rule=Host(`mnscapital.VOTRE-IP.sslip.io`)"
-      # - "traefik.http.routers.mnscapital-secure.entrypoints=websecure"
-      # - "traefik.http.routers.mnscapital-secure.tls=true"
-      # - "traefik.http.routers.mnscapital-secure.tls.certresolver=letsencrypt"
+      - web
 
 networks:
-  # Réseau EXTERNE déjà créé par votre stack Traefik.
-  # Remplacez « proxy » par le nom réel (voir : docker network ls).
-  proxy:
+  # Réseau EXISTANT de votre stack Caddy (vu via « docker network ls »).
+  web:
     external: true
-    name: proxy
+    name: radia-glam_default

@@ -1,170 +1,114 @@
-# Déploiement sur votre serveur de test (Docker + sslip.io)
+# Déploiement sur votre serveur (Docker + Caddy + sslip.io)
 
-Ce guide explique comment mettre le site en ligne sur un serveur qui héberge
-**déjà d'autres sites**, en y accédant via un nom d'hôte **sslip.io**, sans
-acheter ni configurer de domaine.
+Guide adapté à **votre serveur de test** :
+- Reverse proxy : **Caddy** (`radia-glam-caddy-1`, image `caddy:2-alpine`)
+- Réseau Docker : **`radia-glam_default`**
+- Nom d'hôte d'accès : **`mnscapital.167.233.231.68.sslip.io`**
 
-## Le principe (important)
-
-- Votre application tourne dans un **conteneur Docker**, sur un port interne (3000).
-- Un **reverse proxy** (Traefik, le plus courant en Docker) reçoit toutes les
-  requêtes et les **aiguille selon le nom d'hôte** demandé.
-- **sslip.io** fournit gratuitement un nom d'hôte qui pointe vers l'IP de votre
-  serveur, automatiquement : par exemple, si l'IP est `203.0.113.45`, alors
-  **`mnscapital.203.0.113.45.sslip.io`** pointe déjà vers votre serveur.
-- Traefik voit ce nom d'hôte et l'envoie vers le conteneur MNS CAPITAL. Vos
-  autres sites gardent leurs propres noms d'hôte : **aucun conflit**.
-
-```
-Visiteur → mnscapital.203.0.113.45.sslip.io
-                 │
-             (Traefik, port 80/443)
-             ├── mnscapital.….sslip.io  → conteneur MNS CAPITAL (:3000)
-             ├── site-A.exemple.com     → conteneur site A
-             └── site-B.exemple.com     → conteneur site B
-```
+Le principe : l'application MNS CAPITAL tourne dans un conteneur, rejoint le
+réseau de votre Caddy, et **Caddy route le nom d'hôte sslip.io vers elle**.
+Vos autres sites (stack `radia-glam`) ne sont pas touchés. **Caddy gère le
+HTTPS automatiquement** (certificat Let's Encrypt, sans configuration).
 
 ---
 
-## Étape 1 — Identifier votre reverse proxy et son réseau
-
-Sur le serveur, connecté en SSH :
+## Étape 1 — Récupérer le projet
 
 ```bash
-docker ps                 # cherchez un conteneur « traefik » (ou caddy, nginx-proxy)
-docker network ls         # notez le réseau utilisé par le proxy (souvent : proxy, traefik, web)
-```
-
-Repérez le **nom du réseau Docker** partagé par le proxy et les autres sites.
-On l'appelle ici `proxy` — **remplacez-le partout** si le vôtre porte un autre nom.
-
-> Si vous ne voyez **pas** de Traefik, allez à la section
-> « Variantes » plus bas.
-
----
-
-## Étape 2 — Récupérer le projet sur le serveur
-
-```bash
+cd ~
 git clone https://github.com/SokhnaFall01/mnscapital_site.git
 cd mnscapital_site
 git checkout claude/mns-capital-color-rebrand-rn9nfe
 ```
 
----
-
-## Étape 3 — Créer le fichier .env (identifiants)
+## Étape 2 — Créer le fichier .env (identifiants)
 
 ```bash
 cp .env.example .env
 nano .env
 ```
+- `ADMIN_PASSWORD` : mot de passe de l'espace `/admin`.
+- `SESSION_SECRET` : générez-le avec `openssl rand -hex 32` et collez-le.
 
-Renseignez :
-- `ADMIN_PASSWORD` : le mot de passe de l'espace `/admin`.
-- `SESSION_SECRET` : générez une valeur avec `openssl rand -hex 32` et collez-la.
-
----
-
-## Étape 4 — Adapter `docker-compose.yml`
-
-Ouvrez `docker-compose.yml` et modifiez **deux** choses :
-
-1. **Le nom d'hôte** — remplacez `VOTRE-IP` par l'IP publique du serveur
-   (avec des points). Exemple :
-   ```
-   - "traefik.http.routers.mnscapital.rule=Host(`mnscapital.203.0.113.45.sslip.io`)"
-   ```
-   (Vous pouvez trouver l'IP avec : `curl -s ifconfig.me`)
-
-2. **Le nom du réseau** — si votre réseau Traefik ne s'appelle pas `proxy`,
-   remplacez les 3 occurrences de `proxy` (label `traefik.docker.network`,
-   section `networks:` du service, et le bloc `networks:` en bas).
-
----
-
-## Étape 5 — Construire et lancer
+## Étape 3 — Démarrer le conteneur
 
 ```bash
 docker compose up -d --build
+docker compose ps        # doit afficher « mnscapital » en cours d'exécution
 ```
 
-Vérifier que le conteneur tourne :
+Le `docker-compose.yml` est déjà réglé pour rejoindre le réseau
+`radia-glam_default`. À ce stade, le conteneur tourne mais n'est pas encore
+routé : il reste l'étape Caddy.
 
+## Étape 4 — Router le nom d'hôte dans Caddy
+
+1. **Trouver le Caddyfile** utilisé par votre conteneur Caddy :
+   ```bash
+   docker inspect radia-glam-caddy-1 --format '{{json .Mounts}}' | tr ',' '\n'
+   ```
+   Repérez la ligne du **Caddyfile** (source côté hôte), par ex.
+   `/root/radia-glam/Caddyfile` ou `/root/radia-glam/caddy/Caddyfile`.
+
+2. **Ajouter le bloc** suivant à la fin de ce Caddyfile
+   (contenu identique à `deploy/Caddyfile-snippet.conf`) :
+   ```
+   mnscapital.167.233.231.68.sslip.io {
+       reverse_proxy mnscapital:3000
+   }
+   ```
+
+3. **Recharger Caddy** (sans coupure) :
+   ```bash
+   docker exec radia-glam-caddy-1 caddy reload --config /etc/caddy/Caddyfile
+   ```
+   > Si le Caddyfile est monté à un autre emplacement dans le conteneur,
+   > adaptez le chemin ; en dernier recours : `docker restart radia-glam-caddy-1`.
+
+## Étape 5 — Vérifier
+
+- Site : **https://mnscapital.167.233.231.68.sslip.io**
+- Admin : **https://mnscapital.167.233.231.68.sslip.io/admin**
+
+Le premier accès peut prendre quelques secondes (Caddy obtient le certificat).
+
+Diagnostic si besoin :
 ```bash
-docker compose ps
-docker compose logs -f      # Ctrl+C pour quitter
+docker compose logs -f            # logs de l'app MNS CAPITAL
+docker logs radia-glam-caddy-1    # logs de Caddy (obtention du certificat)
 ```
 
-Le site est alors accessible à :
-- **Site** : `http://mnscapital.VOTRE-IP.sslip.io`
-- **Admin** : `http://mnscapital.VOTRE-IP.sslip.io/admin`
-
 ---
 
-## Étape 6 — HTTPS (optionnel mais recommandé)
-
-sslip.io est compatible avec Let's Encrypt. Si votre Traefik possède déjà un
-**certresolver** (souvent nommé `letsencrypt`), décommentez le bloc HTTPS dans
-`docker-compose.yml` et remplacez `letsencrypt` par le nom de votre resolver,
-puis relancez `docker compose up -d`. L'accès se fera alors en `https://`.
-
----
-
-## Persistance des données (déjà gérée)
-
-Le `docker-compose.yml` monte deux volumes pour que **rien ne soit perdu** au
-redémarrage ou à la reconstruction du conteneur :
-- `content.json` → tout le texte du site (modifié via l'admin).
-- `public/assets/img/` → le logo, les photos et **les images téléversées**.
-
-Ces fichiers vivent sur le disque du serveur, à côté du projet.
-
----
-
-## Mettre à jour le site plus tard (nouvelle version du code)
+## Mettre à jour le site plus tard
 
 ```bash
-cd mnscapital_site
+cd ~/mnscapital_site
 git pull
 docker compose up -d --build
 ```
+Vos contenus (`content.json`) et images téléversées sont conservés (volumes).
 
-Vos contenus (`content.json`) et images téléversées sont conservés.
+## Persistance (déjà gérée)
 
----
-
-## Variantes (si vous n'utilisez pas Traefik)
-
-**a) nginx-proxy (jwilder) :** au lieu des labels Traefik, ajoutez au service :
-```yaml
-    environment:
-      - VIRTUAL_HOST=mnscapital.VOTRE-IP.sslip.io
-      - VIRTUAL_PORT=3000
-```
-et rattachez le conteneur au réseau de nginx-proxy.
-
-**b) Caddy (caddy-docker-proxy) :** remplacez les labels par :
-```yaml
-    labels:
-      caddy: mnscapital.VOTRE-IP.sslip.io
-      caddy.reverse_proxy: "{{upstreams 3000}}"
-```
-
-**c) Pas de proxy Docker (Nginx/Apache classique sur l'hôte) :** publiez un
-port et proxifiez-le. Dans `docker-compose.yml`, retirez les `labels`/`networks`
-et ajoutez :
-```yaml
-    ports:
-      - "127.0.0.1:3001:3000"
-```
-Puis créez un vhost qui proxifie `mnscapital.VOTRE-IP.sslip.io` vers
-`http://127.0.0.1:3001`. (Je peux vous fournir ce vhost Nginx ou Apache si besoin.)
-
----
+Le `docker-compose.yml` monte deux volumes pour ne rien perdre au redémarrage :
+- `content.json` → tout le texte du site (modifié via l'admin) ;
+- `public/assets/img/` → logo, photos et **images téléversées**.
 
 ## Rappels de sécurité
 
-- **Changez `ADMIN_PASSWORD`** (ne laissez jamais la valeur par défaut).
+- **Changez `ADMIN_PASSWORD`** (jamais la valeur par défaut).
 - Renseignez un **`SESSION_SECRET`** long et aléatoire.
-- Activez **HTTPS** dès que possible (surtout pour l'accès à `/admin`).
+- Le HTTPS est automatique via Caddy — parfait pour protéger l'accès à `/admin`.
+
+---
+
+## Notes
+
+- **IPv6** : `ifconfig.me` a renvoyé une adresse IPv6 car la requête est
+  passée en IPv6. Le nom d'hôte utilise votre **IPv4 `167.233.231.68`**, ce qui
+  est correct. (sslip.io accepte aussi l'IPv6 sous la forme
+  `mnscapital.2a01-4f8-c015-3814--1.sslip.io` si un jour vous préférez l'IPv6.)
+- **Changer de nom d'hôte** (autre IP, ou vrai domaine plus tard) : il suffit de
+  modifier le nom d'hôte dans le Caddyfile et de recharger Caddy. Le conteneur
+  ne change pas.
