@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administration — MNS CAPITAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/admin.css" />
+  <link rel="icon" href="/assets/img/logo.png" />
+</head>
+<body class="admin-login">
+  <div class="login-card">
+    <img class="login-logo" src="/assets/img/logo.png" alt="MNS CAPITAL" />
+    <h1>Espace administrateur</h1>
+    <p class="login-sub">Connectez-vous pour modifier le contenu du site.</p>
+    <% if (error) { %><div class="login-error"><%= error %></div><% } %>
+    <form method="POST" action="/admin/login" class="login-form">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" placeholder="••••••••" required autofocus />
+      <button type="submit" class="btn btn--navy" style="justify-content:center;width:100%;">Se connecter</button>
+    </form>
+    <a href="/" class="login-back">← Retour au site</a>
+  </div>
+</body>
+</html>

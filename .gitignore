@@ -1,0 +1,4 @@
+node_modules/
+content.json.bak
+.env
+npm-debug.log*

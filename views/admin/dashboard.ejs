@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tableau de bord — MNS CAPITAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/admin.css" />
+  <link rel="icon" href="/assets/img/logo.png" />
+</head>
+<body class="admin-body">
+
+  <header class="admin-header">
+    <div class="admin-header__brand">
+      <img src="/assets/img/logo.png" alt="MNS CAPITAL" />
+      <div>
+        <strong>MNS CAPITAL</strong>
+        <span>Espace administrateur</span>
+      </div>
+    </div>
+    <div class="admin-header__actions">
+      <a href="/" target="_blank" class="btn btn--ghost">Voir le site ↗</a>
+      <button type="button" id="saveBtn" class="btn btn--gold">Enregistrer les modifications</button>
+      <form method="POST" action="/admin/logout" style="display:inline;">
+        <button type="submit" class="btn btn--ghost">Se déconnecter</button>
+      </form>
+    </div>
+  </header>
+
+  <div id="saveToast" class="admin-toast" role="status" aria-live="polite"></div>
+
+  <main class="admin-main">
+    <aside class="admin-nav" id="adminNav"></aside>
+    <section class="admin-editor" id="adminEditor"></section>
+  </main>
+
+  <!-- Contenu actuel injecté pour l'éditeur -->
+  <script id="content-data" type="application/json"><%- JSON.stringify(c) %></script>
+  <script src="/assets/js/admin.js"></script>
+</body>
+</html>

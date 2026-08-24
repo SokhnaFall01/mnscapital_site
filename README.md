@@ -1,86 +1,95 @@
-# MNS CAPITAL — Site vitrine
+# MNS CAPITAL — Site + Espace administrateur
 
-Site vitrine statique (HTML / CSS / JS, sans étape de build) pour **MNS CAPITAL**,
-cabinet indépendant de conseil basé à **Dakar** : ingénierie financière,
-intermédiation stratégique, finance digitale et stratégie au service de l'Afrique.
+Site vitrine de **MNS CAPITAL** (cabinet de conseil basé à Dakar) avec un
+**espace administrateur** permettant de modifier tout le contenu du site
+(textes, listes, images) sans toucher au code.
 
-Devise : **STRUCTURER. FINANCER. TRANSFORMER.**
+Application **Node.js / Express** : les pages sont générées à partir d'un
+fichier de contenu unique (`content.json`), modifiable depuis `/admin`.
 
-Le site reprend le texte et les images fournis (document maquette) et applique la
-**charte de couleurs bleu marine / doré** issue du logo.
+## Démarrage rapide (local)
 
-## Aperçu
-
-Ouvrez `index.html` dans un navigateur — aucun serveur ni compilation nécessaire.
-
-```
-open index.html          # macOS
-xdg-open index.html      # Linux
+```bash
+npm install
+npm start
 ```
 
-## Pages
+- Site : http://localhost:3000
+- Administration : http://localhost:3000/admin
 
-| Fichier | Rubrique |
-|---------|----------|
-| `index.html` | À propos — Le Cabinet (histoire, vision, mission, engagements, valeurs, promesse) |
-| `services.html` | Nos services (offre intégrée, 4 expertises, approche, clients) |
-| `expertise.html` | Notre expertise (4 expertises, différence, parcours en 6 étapes) |
-| `actualites.html` | Perspectives / Actualités |
-| `carrieres.html` | Carrières |
-| `contact.html` | Contact (formulaire) |
+> **Mot de passe par défaut : `mnscapital2026`** — à changer impérativement (voir ci-dessous).
 
-## Structure des fichiers
+## Configuration (variables d'environnement)
+
+| Variable | Rôle | Défaut |
+|----------|------|--------|
+| `PORT` | Port d'écoute du serveur | `3000` |
+| `ADMIN_PASSWORD` | Mot de passe de l'espace admin | `mnscapital2026` |
+| `SESSION_SECRET` | Clé de session (chaîne aléatoire longue) | générée au démarrage |
+
+Exemple :
+
+```bash
+PORT=8080 ADMIN_PASSWORD="VotreMotDePasseFort" SESSION_SECRET="chaine-aleatoire-longue" npm start
+```
+
+Sur un hébergeur (Render, Railway, VPS…), définissez ces variables dans le
+panneau de configuration du service. **Fixez toujours `ADMIN_PASSWORD` et
+`SESSION_SECRET`** en production.
+
+## L'espace administrateur
+
+1. Aller sur `/admin`, saisir le mot de passe.
+2. Choisir une rubrique dans le menu de gauche : **Général, Accueil,
+   Expertises, Services, Expertise, Actualités, Carrières, Contact**.
+3. Modifier les textes, ajouter/supprimer des éléments de liste
+   (engagements, valeurs, expertises, offres d'emploi…), remplacer des images
+   via **« Changer l'image »**.
+4. Cliquer sur **« Enregistrer les modifications »** — les changements sont
+   écrits dans `content.json` et **visibles immédiatement sur le site**.
+
+À chaque enregistrement, une sauvegarde `content.json.bak` de la version
+précédente est créée automatiquement.
+
+## Structure du projet
 
 ```
-index.html, services.html, expertise.html,
-actualites.html, carrieres.html, contact.html   Les 6 pages
-assets/
-  css/styles.css      Feuille de styles + variables de couleurs
-  js/main.js          Navigation mobile, animations, formulaires
-  img/
-    logo.png                    Logo MNS CAPITAL
-    reunion-conseil.jpg         Hero « À propos »
-    presentation-strategie.jpg  Section « Notre histoire »
-    finance-digitale.jpg        Section « Notre différence »
-    poignee-main.jpg            Section « Carrières »
-README.md
+server.js            Serveur Express (pages publiques + API admin)
+content.json         Contenu éditable de tout le site (source unique)
+package.json
+views/               Gabarits EJS
+  partials/          En-tête et pied de page partagés
+  home, services, expertise, actualites, carrieres, contact
+  admin/             login + dashboard (éditeur)
+public/              Fichiers statiques servis tels quels
+  assets/css/        styles.css (site) + admin.css (admin)
+  assets/js/         main.js (site) + admin.js (éditeur)
+  assets/img/        logo + photos (les images téléversées arrivent ici)
 ```
 
 ## Palette de marque
 
-Toutes les couleurs sont centralisées dans des variables CSS en haut de
-`assets/css/styles.css` (`:root`). Pour ajuster la charte, modifiez ces variables.
+Centralisée en variables CSS (`:root`) dans `public/assets/css/styles.css`.
 
-### Bleus (marine — tirés du logo)
-| Rôle | Variable | Hex |
-|------|----------|-----|
-| Bleu marine principal | `--navy` | `#0E2A4E` |
-| Bleu marine profond (hero, footer) | `--navy-deep` | `#081B33` |
-| Bleu marine doux (dégradés) | `--navy-soft` | `#16385F` |
+**Bleus (marine)** : `--navy #0E2A4E` · `--navy-deep #081B33` · `--navy-soft #16385F`
+**Dorés** : `--gold #E3A82B` · `--gold-light #F3C95C` · `--gold-dark #B07E1E`
+**Neutres** : `--white #FFFFFF` · `--mist #F5F7F9` · `--line #E3E8ED` · `--silver #98A3AE` · `--ink #14212F`
 
-### Dorés (tirés de la flèche du logo)
-| Rôle | Variable | Hex |
-|------|----------|-----|
-| Doré principal | `--gold` | `#E3A82B` |
-| Doré clair (accents, dégradés) | `--gold-light` | `#F3C95C` |
-| Doré foncé (kicker, survols) | `--gold-dark` | `#B07E1E` |
+## Déploiement (résumé)
 
-### Neutres
-| Rôle | Variable | Hex |
-|------|----------|-----|
-| Blanc (fonds) | `--white` | `#FFFFFF` |
-| Gris très clair (sections « mist ») | `--mist` | `#F5F7F9` |
-| Gris bordures / lignes | `--line` | `#E3E8ED` |
-| Gris argenté (texte secondaire) | `--silver` | `#98A3AE` |
-| Encre / texte principal | `--ink` | `#14212F` |
+1. Héberger sur un service qui exécute Node.js (Render, Railway, un VPS, etc.).
+2. Commande de démarrage : `npm start` (Node ≥ 18).
+3. Définir les variables `ADMIN_PASSWORD` et `SESSION_SECRET`.
+4. **Persistance des images et du contenu** : `content.json` et les images
+   téléversées dans `public/assets/img/` sont écrits sur le disque du serveur.
+   Sur un hébergement à disque éphémère, prévoyez un **disque persistant**
+   (volume) pour conserver les modifications entre les redémarrages.
 
 ## À finaliser
 
-Quelques éléments restent à compléter avec vos informations définitives :
-
-1. **Coordonnées** (page `contact.html`) — e-mail et téléphone officiels du cabinet
-   (actuellement marqués « à renseigner »).
-2. **Mentions légales / Confidentialité** — pages à créer (liens présents dans le pied de page).
-3. **Formulaires** — les formulaires de contact et de newsletter sont des démos
-   côté client ; branchez-les sur votre service d'envoi (Formspree, backend, etc.).
-4. **Réseaux sociaux** — à ajouter si souhaité.
+1. **Mot de passe admin** : changer `ADMIN_PASSWORD` en production.
+2. **Coordonnées** : renseigner l'e-mail et le téléphone du cabinet
+   (rubrique Contact de l'admin).
+3. **Formulaire de contact** : les messages sont pour l'instant journalisés
+   côté serveur (console). Brancher un envoi d'e-mail (ex. Nodemailer) si besoin.
+4. **Mentions légales / Confidentialité** : pages à créer (liens dans le pied de page).

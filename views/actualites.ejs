@@ -1,0 +1,42 @@
+<% var pageTitle = c.site.brandName + " — Perspectives · Analyses & points de vue"; %>
+<%- include("partials/header", { c: c, page: page, pageTitle: pageTitle }) %>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__inner reveal">
+        <div class="breadcrumb"><a href="/">Accueil</a> &nbsp;/&nbsp; Perspectives</div>
+        <span class="kicker">Perspectives</span>
+        <h1><%= c.actualites.heroTitle %></h1>
+        <p><%= c.actualites.heroLede %></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="notice reveal">
+        <span class="notice__badge"><%= c.actualites.noticeBadge %></span>
+        <h2><%= c.actualites.noticeTitle %></h2>
+        <p><%= c.actualites.noticeText %></p>
+        <div class="tags" style="margin-top:26px;">
+          <% c.actualites.topics.forEach(function(t){ %><span class="tag"><%= t %></span><% }); %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--navy">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2>Être informé des publications.</h2>
+        <p>Recevez nos analyses et points de vue dès leur parution.</p>
+        <form class="form" id="newsletterForm" style="max-width:520px;margin:0 auto;grid-template-columns:1fr auto;display:grid;gap:12px;" novalidate>
+          <input type="email" id="newsletterEmail" name="email" placeholder="Votre adresse e-mail professionnelle" required aria-label="Adresse e-mail" />
+          <button type="submit" class="btn btn--gold">S'inscrire</button>
+          <p id="newsletterMsg" class="form__msg" style="grid-column:1/-1;color:var(--gold-light)"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+<%- include("partials/footer", { c: c }) %>

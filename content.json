@@ -1,0 +1,215 @@
+{
+  "site": {
+    "brandName": "MNS CAPITAL",
+    "brandTagline": "Dakar · Afrique",
+    "logo": "assets/img/logo.png",
+    "motto": [
+      "Structurer",
+      "Financer",
+      "Transformer"
+    ],
+    "footerAbout": "Cabinet indépendant de conseil en ingénierie financière, intermédiation stratégique, finance digitale et stratégie.",
+    "footerMotto": "STRUCTURER. FINANCER. TRANSFORMER.",
+    "footerPlace": "Dakar · Afrique"
+  },
+  "contact": {
+    "heroTitle": "Parlons de votre projet.",
+    "heroLede": "De la conception au financement et à la transformation, notre équipe étudie chaque demande avec attention et confidentialité.",
+    "infoTitle": "Un interlocuteur dédié à votre écoute.",
+    "location": "Dakar · Afrique",
+    "email": "À renseigner (adresse officielle du cabinet)",
+    "phone": "À renseigner (ligne du cabinet)",
+    "availability": "Lundi – Vendredi, 9h00 – 18h00 (GMT)"
+  },
+  "home": {
+    "heroKicker": "Le Cabinet",
+    "heroTitle": "Indépendance, vision et exigence au service de l'Afrique.",
+    "heroLede": "MNS CAPITAL se positionne comme un partenaire stratégique capable d'intervenir de la conception d'un projet à son financement et à sa transformation.",
+    "heroImage": "assets/img/reunion-conseil.jpg",
+    "histoireKicker": "Notre histoire",
+    "histoireTitle": "Un cabinet né d'une conviction forte.",
+    "histoirePara1": "Les projets les plus ambitieux méritent des solutions financières innovantes, une vision stratégique claire et un accompagnement de proximité.",
+    "histoirePara2": "MNS CAPITAL a été conçu pour rapprocher la stratégie, la finance et l'exécution. Basé à Dakar et résolument tourné vers l'Afrique, le cabinet intervient auprès d'organisations souhaitant structurer des projets à fort potentiel, mobiliser les financements nécessaires et créer une croissance durable et inclusive.",
+    "histoireImage": "assets/img/presentation-strategie.jpg",
+    "histoireBadgeStrong": "Dakar",
+    "histoireBadgeText": "un ancrage africain, une vision panafricaine",
+    "visionTitle": "Être un partenaire de référence en Afrique.",
+    "visionText": "Nous aspirons à bâtir un écosystème où les entreprises, investisseurs et institutions disposent des expertises, outils et financements nécessaires pour transformer leurs ambitions en réalisations concrètes.",
+    "missionTitle": "Structurer, financer et développer.",
+    "missionText": "Accompagner les organisations par des solutions innovantes, des conseils stratégiques et un suivi personnalisé à chaque étape de leur croissance.",
+    "engagementsTitle": "Une exigence qui guide chaque mission.",
+    "engagements": [
+      "Offrir une expertise de haut niveau fondée sur la rigueur, l'analyse et l'innovation.",
+      "Construire une relation de confiance basée sur l'intégrité, la confidentialité et l'indépendance.",
+      "Proposer des solutions sur mesure adaptées aux besoins et ambitions de chaque client.",
+      "Mobiliser les meilleurs partenaires financiers et stratégiques.",
+      "Contribuer au développement économique de l'Afrique par des projets à fort impact."
+    ],
+    "valeursTitle": "Ce que nous défendons, dans chaque décision.",
+    "valeurs": [
+      {
+        "title": "Excellence",
+        "text": "La qualité comme standard de chaque intervention, pour des solutions performantes et durables."
+      },
+      {
+        "title": "Intégrité",
+        "text": "Transparence, éthique et indépendance dans chacune de nos relations."
+      },
+      {
+        "title": "Innovation",
+        "text": "Des approches nouvelles pour répondre aux défis d'un environnement en transformation."
+      },
+      {
+        "title": "Engagement",
+        "text": "Une implication pleine aux côtés de nos clients, jusqu'à la réussite du projet."
+      },
+      {
+        "title": "Impact",
+        "text": "Des solutions créatrices de valeur économique, sociale et durable."
+      }
+    ],
+    "promesse": "Transformer les ambitions en projets viables, les projets en investissements et les investissements en croissance durable.",
+    "ctaTitle": "Parlons de votre prochain projet",
+    "ctaText": "De la conception au financement et à la transformation, nos équipes vous accompagnent à chaque étape décisive."
+  },
+  "expertises": [
+    {
+      "title": "Ingénierie financière",
+      "lead": "Conception de modèles financiers robustes, pensés pour la réalité de chaque projet et de son marché.",
+      "points": [
+        "Structuration financière de projets complexes",
+        "Modélisation, business plans et faisabilité",
+        "Optimisation des montages juridico-financiers"
+      ]
+    },
+    {
+      "title": "Intermédiation stratégique",
+      "lead": "Mise en relation entre investisseurs et porteurs de projets au service de la mobilisation de capitaux.",
+      "points": [
+        "Identification d'opportunités d'investissement",
+        "Levées de fonds locales et internationales",
+        "Négociation et accompagnement jusqu'au closing"
+      ]
+    },
+    {
+      "title": "Finance digitale",
+      "lead": "Intégration de solutions numériques pour fluidifier les transactions et renforcer la transparence.",
+      "points": [
+        "Digitalisation des processus financiers",
+        "Paiement et inclusion financière",
+        "Reporting et traçabilité"
+      ]
+    },
+    {
+      "title": "Conseil en stratégie et performance",
+      "lead": "Accompagnement des organisations dans leur vision, leur gouvernance et l'accélération de leur croissance durable.",
+      "points": [
+        "Stratégies de développement et croissance",
+        "Organisation, gouvernance et conseil aux dirigeants",
+        "Partenariats, M&A et développement commercial"
+      ]
+    }
+  ],
+  "services": {
+    "heroTitle": "Des solutions financières et stratégiques qui vont jusqu'à l'exécution.",
+    "heroLede": "Notre modèle d'intervention articule analyse, structuration, mise en relation et pilotage pour sécuriser chaque étape décisive.",
+    "offreTitle": "Quatre expertises. Une seule trajectoire.",
+    "offreText": "Chaque mission peut mobiliser une discipline spécifique ou une équipe pluridisciplinaire selon le besoin.",
+    "approcheTitle": "Le sur-mesure, sans compromis sur la rigueur.",
+    "approcheText": "Nous partons du contexte réel du client, de son marché, de sa gouvernance et de ses objectifs. La solution n'est jamais standardisée : elle est structurée pour être crédible, finançable et exécutable.",
+    "approcheSteps": [
+      "Écoute et diagnostic approfondi",
+      "Modélisation et scénarios de décision",
+      "Accès aux partenaires pertinents",
+      "Accompagnement jusqu'au résultat"
+    ],
+    "clientsTitle": "Une capacité d'intervention auprès d'acteurs multiples.",
+    "clients": [
+      "Entreprises et PME",
+      "Grandes entreprises",
+      "Investisseurs",
+      "Banques",
+      "Fonds d'investissement",
+      "Institutions publiques",
+      "Organisations internationales",
+      "Porteurs de projets"
+    ],
+    "ctaTitle": "Un projet à structurer ou à financer ?",
+    "ctaText": "Nos équipes mobilisent la bonne discipline — ou une équipe pluridisciplinaire — pour sécuriser chaque étape."
+  },
+  "expertise": {
+    "heroTitle": "De la conception d'un projet à sa transformation.",
+    "heroLede": "MNS CAPITAL rassemble les compétences financières, stratégiques et digitales nécessaires pour rendre les ambitions plus lisibles, plus robustes et plus finançables.",
+    "differenceTitle": "Une lecture à la fois financière, stratégique, institutionnelle et opérationnelle.",
+    "differenceText": "Nous rapprochons les enjeux de gouvernance, les réalités de marché, l'accès au capital et l'exécution — pour que chaque décision repose sur une vision complète et cohérente.",
+    "differenceImage": "assets/img/finance-digitale.jpg",
+    "features": [
+      {
+        "title": "Gouvernance & institutions",
+        "text": "Une compréhension fine des cadres institutionnels africains."
+      },
+      {
+        "title": "Marché & capital",
+        "text": "Un accès aux partenaires financiers locaux et internationaux."
+      },
+      {
+        "title": "Exécution",
+        "text": "Un accompagnement qui va jusqu'à la mise en œuvre concrète."
+      }
+    ],
+    "parcoursTitle": "Six étapes pour réduire l'incertitude et accélérer la décision.",
+    "parcours": [
+      {
+        "title": "Diagnostic",
+        "text": "Comprendre les objectifs, contraintes et leviers de création de valeur."
+      },
+      {
+        "title": "Analyse",
+        "text": "Évaluer les données, le marché, les risques et les scénarios possibles."
+      },
+      {
+        "title": "Structuration",
+        "text": "Concevoir l'architecture financière, stratégique et opérationnelle adaptée."
+      },
+      {
+        "title": "Mobilisation des financements",
+        "text": "Identifier, qualifier et engager les partenaires financiers pertinents."
+      },
+      {
+        "title": "Mise en œuvre",
+        "text": "Accompagner les décisions, négociations et travaux jusqu'à l'exécution."
+      },
+      {
+        "title": "Suivi stratégique",
+        "text": "Mesurer les avancées et ajuster la trajectoire dans la durée."
+      }
+    ]
+  },
+  "actualites": {
+    "heroTitle": "Éclairer les décisions qui façonnent la croissance africaine.",
+    "heroLede": "Analyses, décryptages et points de vue de MNS CAPITAL sur la finance, l'investissement, la transformation et la performance.",
+    "noticeBadge": "Publication éditoriale en préparation",
+    "noticeTitle": "Nos premières analyses seront publiées prochainement.",
+    "noticeText": "La rubrique est déjà structurée pour accueillir des articles, notes de conjoncture, décryptages sectoriels et publications institutionnelles. Aucun contenu fictif n'est présenté comme une actualité réelle.",
+    "topics": [
+      "Ingénierie financière",
+      "Marchés de capitaux",
+      "Finance digitale",
+      "Infrastructure",
+      "Gouvernance",
+      "Afrique de l'Ouest"
+    ]
+  },
+  "carrieres": {
+    "heroTitle": "Construire des solutions qui comptent.",
+    "heroLede": "Rejoindre MNS CAPITAL, c'est contribuer à des missions exigeantes au croisement de la finance, de la stratégie et du développement du continent.",
+    "cultureTitle": "L'exigence intellectuelle au service de l'impact.",
+    "culturePara1": "Nous valorisons la rigueur, la curiosité, l'intégrité, l'esprit d'équipe et la capacité à transformer une analyse en décision concrète.",
+    "culturePara2": "Les opportunités seront publiées dans cet espace au fur et à mesure des besoins du cabinet.",
+    "cultureImage": "assets/img/poignee-main.jpg",
+    "offersTitle": "Nos offres du moment",
+    "offers": [],
+    "emptyTitle": "Aucune offre publiée actuellement",
+    "emptyText": "Les candidatures spontanées peuvent être adressées depuis le formulaire de contact en sélectionnant le motif « Carrières »."
+  }
+}

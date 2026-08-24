@@ -1,0 +1,81 @@
+<% var pageTitle = c.site.brandName + " — Nos services · Solutions financières & stratégiques"; %>
+<%- include("partials/header", { c: c, page: page, pageTitle: pageTitle }) %>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__inner reveal">
+        <div class="breadcrumb"><a href="/">Accueil</a> &nbsp;/&nbsp; Services</div>
+        <span class="kicker">Nos services</span>
+        <h1><%= c.services.heroTitle %></h1>
+        <p><%= c.services.heroLede %></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <span class="kicker">Offre intégrée</span>
+        <h2><%= c.services.offreTitle %></h2>
+        <p><%= c.services.offreText %></p>
+      </div>
+      <div class="grid" style="gap:26px;">
+        <% c.expertises.forEach(function(ex, i){ %>
+          <article class="expertise reveal">
+            <div class="expertise__num"><%= String(i+1).padStart(2,'0') %></div>
+            <div>
+              <h3><%= ex.title %></h3>
+              <p class="expertise__lead"><%= ex.lead %></p>
+              <ul class="expertise__points">
+                <% ex.points.forEach(function(pt){ %><li><%= pt %></li><% }); %>
+              </ul>
+            </div>
+          </article>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--mist">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <span class="kicker">Notre approche</span>
+        <h2><%= c.services.approcheTitle %></h2>
+        <p><%= c.services.approcheText %></p>
+      </div>
+      <div class="steps reveal">
+        <% c.services.approcheSteps.forEach(function(step, i){ %>
+          <div class="step"><div class="step__num"><%= String(i+1).padStart(2,'0') %></div><h3><%= step %></h3></div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <span class="kicker">Nos clients</span>
+        <h2><%= c.services.clientsTitle %></h2>
+      </div>
+      <div class="tags reveal">
+        <% c.services.clients.forEach(function(cl){ %><span class="tag"><%= cl %></span><% }); %>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--navy">
+    <div class="container">
+      <div class="cta-band reveal">
+        <h2><%= c.services.ctaTitle %></h2>
+        <p><%= c.services.ctaText %></p>
+        <a href="/contact" class="btn btn--gold">Démarrer un échange
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<%- include("partials/footer", { c: c }) %>

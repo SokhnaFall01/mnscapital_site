@@ -1,0 +1,42 @@
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="brand">
+            <img class="brand__logo" src="/<%= c.site.logo %>" alt="Logo <%= c.site.brandName %>" />
+            <span class="brand__name"><%= c.site.brandName %><small><%= c.site.brandTagline %></small></span>
+          </a>
+          <p class="footer__about"><%= c.site.footerAbout %></p>
+          <span class="footer__place">
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <%= c.site.footerPlace %>
+          </span>
+        </div>
+        <div class="footer__col">
+          <h4>Cabinet</h4>
+          <a href="/">À propos</a>
+          <a href="/expertise">Expertise</a>
+          <a href="/carrieres">Carrières</a>
+        </div>
+        <div class="footer__col">
+          <h4>Intervenir</h4>
+          <a href="/services">Nos services</a>
+          <a href="/actualites">Perspectives</a>
+          <a href="/contact">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Informations</h4>
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+        </div>
+      </div>
+      <div class="footer__bar">
+        <span>&copy; 2026 <%= c.site.brandName %>. Tous droits réservés.</span>
+        <strong><%= c.site.footerMotto %></strong>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
