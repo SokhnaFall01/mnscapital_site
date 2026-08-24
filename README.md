@@ -1,39 +1,55 @@
-# MNS Capital Africa — Site vitrine
+# MNS CAPITAL — Site vitrine
 
-Site vitrine statique (HTML / CSS / JS, sans dépendance de build) pour
-**MNS Capital Africa**, un cabinet de conseil financier dédié à l'Afrique.
+Site vitrine statique (HTML / CSS / JS, sans étape de build) pour **MNS CAPITAL**,
+cabinet indépendant de conseil basé à **Dakar** : ingénierie financière,
+intermédiation stratégique, finance digitale et stratégie au service de l'Afrique.
 
-Ce dépôt reprend la structure d'un site vitrine de conseil financier
-(en-tête fixe, hero, à propos, services, approche, secteurs, équipe,
-contact, pied de page) et applique **la nouvelle palette de marque bleu
-marine / doré** issue du logo.
+Devise : **STRUCTURER. FINANCER. TRANSFORMER.**
+
+Le site reprend le texte et les images fournis (document maquette) et applique la
+**charte de couleurs bleu marine / doré** issue du logo.
 
 ## Aperçu
 
-Ouvrez simplement `index.html` dans un navigateur — aucun serveur ni
-compilation n'est nécessaire.
+Ouvrez `index.html` dans un navigateur — aucun serveur ni compilation nécessaire.
 
 ```
 open index.html          # macOS
 xdg-open index.html      # Linux
 ```
 
-## Structure
+## Pages
+
+| Fichier | Rubrique |
+|---------|----------|
+| `index.html` | À propos — Le Cabinet (histoire, vision, mission, engagements, valeurs, promesse) |
+| `services.html` | Nos services (offre intégrée, 4 expertises, approche, clients) |
+| `expertise.html` | Notre expertise (4 expertises, différence, parcours en 6 étapes) |
+| `actualites.html` | Perspectives / Actualités |
+| `carrieres.html` | Carrières |
+| `contact.html` | Contact (formulaire) |
+
+## Structure des fichiers
 
 ```
-index.html            Page principale (toutes les sections)
+index.html, services.html, expertise.html,
+actualites.html, carrieres.html, contact.html   Les 6 pages
 assets/
   css/styles.css      Feuille de styles + variables de couleurs
-  js/main.js          Navigation mobile, animations, formulaire
-  img/                (vide) — déposez ici vos images définitives
+  js/main.js          Navigation mobile, animations, formulaires
+  img/
+    logo.png                    Logo MNS CAPITAL
+    reunion-conseil.jpg         Hero « À propos »
+    presentation-strategie.jpg  Section « Notre histoire »
+    finance-digitale.jpg        Section « Notre différence »
+    poignee-main.jpg            Section « Carrières »
 README.md
 ```
 
 ## Palette de marque
 
 Toutes les couleurs sont centralisées dans des variables CSS en haut de
-`assets/css/styles.css` (`:root`). Pour ajuster la charte, il suffit de
-modifier ces variables.
+`assets/css/styles.css` (`:root`). Pour ajuster la charte, modifiez ces variables.
 
 ### Bleus (marine — tirés du logo)
 | Rôle | Variable | Hex |
@@ -58,28 +74,13 @@ modifier ces variables.
 | Gris argenté (texte secondaire) | `--silver` | `#98A3AE` |
 | Encre / texte principal | `--ink` | `#14212F` |
 
-## Personnalisation du contenu
+## À finaliser
 
-> **Note importante.** Le site source
-> (`mns-capital-africa.skywork.website`) n'était pas accessible depuis
-> l'environnement de génération (accès réseau sortant bloqué par la
-> politique de sécurité). Les textes et visuels de ce dépôt ont donc été
-> rédigés à partir des **informations publiques** de l'entreprise
-> (services de conseil d'entreprise, levée de capitaux et entrée sur les
-> marchés ; réseau panafricain et places financières mondiales ;
-> contact `info@mncapital-africa.com`). Ils reprennent fidèlement la mise
-> en page et la nouvelle palette demandées, mais **doivent être remplacés
-> par vos textes et images définitifs** pour obtenir un clone exact.
+Quelques éléments restent à compléter avec vos informations définitives :
 
-À remplacer :
-
-1. **Textes** — chaque section dans `index.html` (hero, à propos, services,
-   équipe, etc.). Les libellés sont clairement identifiés.
-2. **Images** — déposez vos visuels dans `assets/img/` puis remplacez les
-   blocs SVG de remplacement (logo, photo « à propos », photos d'équipe).
-3. **Logo** — le logo est un SVG en ligne aux couleurs de la marque ; vous
-   pouvez le remplacer par votre fichier officiel.
-4. **Coordonnées** — e-mail, téléphone et réseaux sociaux dans la section
-   contact et le pied de page.
-5. **Formulaire** — le formulaire est une démo côté client ; branchez-le
-   sur votre service d'envoi (Formspree, backend, etc.).
+1. **Coordonnées** (page `contact.html`) — e-mail et téléphone officiels du cabinet
+   (actuellement marqués « à renseigner »).
+2. **Mentions légales / Confidentialité** — pages à créer (liens présents dans le pied de page).
+3. **Formulaires** — les formulaires de contact et de newsletter sont des démos
+   côté client ; branchez-les sur votre service d'envoi (Formspree, backend, etc.).
+4. **Réseaux sociaux** — à ajouter si souhaité.
