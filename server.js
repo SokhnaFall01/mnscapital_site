@@ -15,6 +15,10 @@ const multer = require("multer");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Derrière un reverse proxy (Traefik, Nginx…) : faire confiance aux en-têtes
+// X-Forwarded-* pour connaître le protocole et l'IP réels du visiteur.
+app.set("trust proxy", 1);
+
 /* --- Configuration (à personnaliser via variables d'environnement) --- */
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "mnscapital2026";
 const SESSION_SECRET =
