@@ -158,6 +158,22 @@
       ]
     },
     {
+      key: "partners", label: "Partenaires", icon: "🤝",
+      title: "Section Partenaires",
+      desc: "Titre, texte et logos des partenaires (affichés sur la page d'accueil).",
+      base: ["partners"],
+      fields: [
+        { path: "title", label: "Titre de la section", type: "text" },
+        { path: "lead", label: "Texte d'introduction", type: "textarea" },
+        { path: "items", label: "Logos des partenaires", type: "listobj",
+          item: [
+            { path: "name", label: "Nom du partenaire", type: "text" },
+            { path: "logo", label: "Logo", type: "image" },
+            { path: "url", label: "Lien vers le site (optionnel)", type: "text" }
+          ] }
+      ]
+    },
+    {
       key: "contact", label: "Contact", icon: "✉️",
       title: "Page Contact",
       desc: "Bandeau et coordonnées du cabinet.",
@@ -285,6 +301,8 @@
         field.item.forEach(function (f) {
           if (f.type === "liststr") {
             item.appendChild(buildListStr(obj, f));
+          } else if (f.type === "image") {
+            item.appendChild(buildImage(obj, f));
           } else {
             var sub = el("div", "sub");
             var sl = el("label"); sl.textContent = f.label; sub.appendChild(sl);

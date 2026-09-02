@@ -120,6 +120,33 @@
     </div>
   </section>
 
+  <!-- ================= PARTENAIRES ================= -->
+  <% if (c.partners && c.partners.items && c.partners.items.length) { %>
+  <section class="section" id="partenaires">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <span class="kicker">Partenaires</span>
+        <h2><%= c.partners.title %></h2>
+        <% if (c.partners.lead) { %><p><%= c.partners.lead %></p><% } %>
+      </div>
+      <div class="partners-grid reveal">
+        <% c.partners.items.forEach(function(p){ %>
+          <% if (p.url) { %>
+            <a class="partner" href="<%= p.url %>" target="_blank" rel="noopener" title="<%= p.name %>">
+              <img src="/<%= p.logo %>" alt="<%= p.name %>" loading="lazy" />
+            </a>
+          <% } else { %>
+            <div class="partner" title="<%= p.name %>">
+              <img src="/<%= p.logo %>" alt="<%= p.name %>" loading="lazy" />
+            </div>
+          <% } %>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
   <!-- ================= APPEL À L'ACTION ================= -->
   <section class="section section--mist">
     <div class="container">

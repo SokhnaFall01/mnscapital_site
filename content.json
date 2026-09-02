@@ -211,5 +211,17 @@
     "offers": [],
     "emptyTitle": "Aucune offre publiée actuellement",
     "emptyText": "Les candidatures spontanées peuvent être adressées depuis le formulaire de contact en sélectionnant le motif « Carrières »."
+  },
+  "partners": {
+    "title": "Ils nous font confiance",
+    "lead": "Des partenaires engagés à nos côtés pour structurer, financer et transformer des projets à fort impact.",
+    "items": [
+      { "name": "Azurtech", "logo": "assets/img/partners/azurtech.jpeg", "url": "" },
+      { "name": "Casagri", "logo": "assets/img/partners/casagri.jpeg", "url": "" },
+      { "name": "Qprost", "logo": "assets/img/partners/qprost.jpeg", "url": "" },
+      { "name": "SOTRACOM", "logo": "assets/img/partners/sotracom.png", "url": "" },
+      { "name": "EDK Groupe", "logo": "assets/img/partners/edk-groupe.png", "url": "" },
+      { "name": "Afitex", "logo": "assets/img/partners/afitex.webp", "url": "" }
+    ]
   }
 }
