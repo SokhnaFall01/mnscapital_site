@@ -1,0 +1,44 @@
+<% var pageTitle = c.site.brandName + " — Pourquoi nous ?"; %>
+<%- include("partials/header", { c: c, page: page, pageTitle: pageTitle }) %>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__inner reveal">
+        <div class="breadcrumb"><a href="/">Accueil</a> &nbsp;/&nbsp; Pourquoi nous ?</div>
+        <span class="kicker">Pourquoi nous ?</span>
+        <p class="page-hero__lede"><%= c.pourquoi.intro %></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LES ATOUTS ================= -->
+  <section class="section section--mist">
+    <div class="container">
+      <div class="grid grid--3">
+        <% c.pourquoi.atouts.forEach(function(a, i){ %>
+          <div class="card reveal">
+            <span class="card__badge"><%= String(i+1).padStart(2,'0') %></span>
+            <h3><%= a.title %></h3>
+            <p class="card__text"><%= a.text %></p>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SYNTHÈSE ================= -->
+  <section class="section section--navy">
+    <div class="container">
+      <div class="quote reveal">
+        <span class="quote__mark">&ldquo;</span>
+        <blockquote><%= c.pourquoi.synthese %></blockquote>
+      </div>
+      <div style="text-align:center;margin-top:8px;">
+        <a href="/contact" class="btn btn--gold"><%= c.contact.ctaLabel %>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<%- include("partials/footer", { c: c }) %>

@@ -1,29 +1,27 @@
-<% var pageTitle = c.site.brandName + " — Contact · Parlons de votre projet"; %>
+<% var pageTitle = c.site.brandName + " — Contact"; %>
 <%- include("partials/header", { c: c, page: page, pageTitle: pageTitle }) %>
 
   <section class="page-hero">
     <div class="container">
       <div class="page-hero__inner reveal">
         <div class="breadcrumb"><a href="/">Accueil</a> &nbsp;/&nbsp; Contact</div>
-        <span class="kicker">Nous contacter</span>
-        <h1><%= c.contact.heroTitle %></h1>
-        <p><%= c.contact.heroLede %></p>
+        <span class="kicker">Contact</span>
+        <p class="page-hero__lede"><%= c.contact.intro %></p>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section--mist">
     <div class="container">
       <div class="contact__grid">
         <div class="reveal">
           <div class="section-head section-head--left" style="margin-bottom:28px;">
             <div class="gold-rule"></div>
             <span class="kicker">Coordonnées</span>
-            <h2><%= c.contact.infoTitle %></h2>
           </div>
           <div class="contact__info-item">
             <span class="ic"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <div><h4>Localisation</h4><p><%= c.contact.location %></p></div>
+            <div><h4>Ville &amp; pays</h4><p><%= c.contact.location %></p></div>
           </div>
           <div class="contact__info-item">
             <span class="ic"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
@@ -42,45 +40,45 @@
         <div class="form-card reveal">
           <% if (typeof sent !== "undefined" && sent) { %>
             <div style="padding:16px 18px;border-radius:10px;background:rgba(227,168,43,.12);color:var(--gold-dark);font-weight:600;margin-bottom:20px;">
-              Merci ! Votre message a bien été reçu. Nous vous répondrons dans les meilleurs délais.
+              <%= c.contact.confirmation %>
             </div>
           <% } %>
           <form class="form" id="contactForm" method="POST" action="/contact" novalidate>
-            <div class="row">
-              <div>
-                <label for="fname">Prénom</label>
-                <input type="text" id="fname" name="fname" placeholder="Votre prénom" required />
-              </div>
-              <div>
-                <label for="lname">Nom</label>
-                <input type="text" id="lname" name="lname" placeholder="Votre nom" required />
-              </div>
+            <div>
+              <label for="name">Nom et prénom</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required />
+            </div>
+            <div>
+              <label for="org">Organisation</label>
+              <input type="text" id="org" name="org" placeholder="Nom de l'organisation" />
+            </div>
+            <div>
+              <label for="secteur">Secteur d'activités</label>
+              <select id="secteur" name="secteur">
+                <% c.contact.secteurs.forEach(function(s){ %><option value="<%= s %>"><%= s %></option><% }); %>
+              </select>
             </div>
             <div class="row">
               <div>
-                <label for="email">E-mail</label>
+                <label for="email">Adresse e-mail</label>
                 <input type="email" id="email" name="email" placeholder="vous@organisation.com" required />
               </div>
               <div>
-                <label for="org">Organisation</label>
-                <input type="text" id="org" name="org" placeholder="Nom de l'organisation" />
+                <label for="phone">Téléphone</label>
+                <input type="text" id="phone" name="phone" placeholder="Votre numéro" />
               </div>
             </div>
             <div>
               <label for="motif">Motif de contact</label>
               <select id="motif" name="motif">
-                <option value="conseil">Conseil &amp; stratégie</option>
-                <option value="financement">Financement / levée de fonds</option>
-                <option value="partenariat">Partenariat</option>
-                <option value="carrieres">Carrières</option>
-                <option value="autre">Autre</option>
+                <% c.contact.motifs.forEach(function(m){ %><option value="<%= m %>"><%= m %></option><% }); %>
               </select>
             </div>
             <div>
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Décrivez votre projet ou votre besoin…" required></textarea>
+              <textarea id="message" name="message" placeholder="Votre message…" required></textarea>
             </div>
-            <button type="submit" class="btn btn--navy">Envoyer le message
+            <button type="submit" class="btn btn--navy"><%= c.contact.ctaLabel %>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             </button>
           </form>

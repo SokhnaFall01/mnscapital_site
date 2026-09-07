@@ -96,12 +96,13 @@ function render(res, view) {
   res.render(view, { c: content, page: view });
 }
 
-app.get("/", (req, res) => render(res, "home"));
+app.get("/", (req, res) => render(res, "apropos"));
 app.get("/services", (req, res) => render(res, "services"));
-app.get("/expertise", (req, res) => render(res, "expertise"));
-app.get("/actualites", (req, res) => render(res, "actualites"));
-app.get("/carrieres", (req, res) => render(res, "carrieres"));
+app.get("/pourquoi", (req, res) => render(res, "pourquoi"));
 app.get("/contact", (req, res) => render(res, "contact"));
+
+// Anciennes URL redirigées vers la nouvelle structure
+app.get(["/expertise", "/actualites", "/carrieres"], (req, res) => res.redirect(301, "/"));
 
 /* Réception du formulaire de contact (démo : journalise et confirme) */
 app.post("/contact", (req, res) => {

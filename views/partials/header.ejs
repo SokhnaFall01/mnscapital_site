@@ -20,12 +20,10 @@
         <span class="brand__name"><%= c.site.brandName %><small><%= c.site.brandTagline %></small></span>
       </a>
       <nav class="nav" id="nav">
-        <a href="/"<%= page === "home" ? ' class="active"' : "" %>>À propos</a>
-        <a href="/services"<%= page === "services" ? ' class="active"' : "" %>>Services</a>
-        <a href="/expertise"<%= page === "expertise" ? ' class="active"' : "" %>>Expertise</a>
-        <a href="/actualites"<%= page === "actualites" ? ' class="active"' : "" %>>Actualités</a>
-        <a href="/carrieres"<%= page === "carrieres" ? ' class="active"' : "" %>>Carrières</a>
-        <a href="/contact" class="btn btn--gold nav__cta<%= page === "contact" ? " active" : "" %>">Nous contacter</a>
+        <a href="/"<%= page === "apropos" ? ' class="active"' : "" %>>À propos</a>
+        <a href="/services"<%= page === "services" ? ' class="active"' : "" %>>Nos services</a>
+        <a href="/pourquoi"<%= page === "pourquoi" ? ' class="active"' : "" %>>Pourquoi nous ?</a>
+        <a href="/contact" class="btn btn--gold nav__cta<%= page === "contact" ? " active" : "" %>">Contact</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>

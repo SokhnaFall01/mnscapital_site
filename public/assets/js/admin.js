@@ -16,155 +16,45 @@
     {
       key: "general", label: "Général", icon: "⚙️",
       title: "Paramètres généraux",
-      desc: "Nom, logo, devise et pied de page présents sur toutes les pages.",
+      desc: "Nom, logo et pied de page présents sur toutes les pages.",
       base: ["site"],
       fields: [
-        { path: "brandName", label: "Nom du cabinet", type: "text" },
+        { path: "brandName", label: "Nom de la structure", type: "text" },
         { path: "brandTagline", label: "Sous-titre (sous le nom)", type: "text" },
         { path: "logo", label: "Logo", type: "image" },
-        { path: "motto", label: "Devise (mots-clés)", type: "liststr" },
         { path: "footerAbout", label: "Description (pied de page)", type: "textarea" },
-        { path: "footerMotto", label: "Devise du pied de page", type: "text" },
+        { path: "footerMotto", label: "Signature (pied de page)", type: "text" },
         { path: "footerPlace", label: "Localisation (pied de page)", type: "text" }
       ]
     },
     {
-      key: "home", label: "Accueil", icon: "🏠",
-      title: "Page d'accueil (Le Cabinet)",
-      desc: "Bandeau principal, histoire, vision, mission, engagements, valeurs et promesse.",
-      base: ["home"],
+      key: "apropos", label: "À propos", icon: "🏛️",
+      title: "Page À propos",
+      desc: "Présentation, positionnement, mission, vision, approche, CEO et promesse.",
+      base: ["apropos"],
       fields: [
-        { path: "heroKicker", label: "Sur-titre du bandeau", type: "text" },
-        { path: "heroTitle", label: "Titre principal", type: "textarea" },
-        { path: "heroLede", label: "Texte d'introduction", type: "textarea" },
         { path: "heroImage", label: "Image du bandeau", type: "image" },
-        { path: "histoireKicker", label: "Sur-titre « Histoire »", type: "text" },
-        { path: "histoireTitle", label: "Titre « Histoire »", type: "text" },
-        { path: "histoirePara1", label: "Histoire — paragraphe 1", type: "textarea" },
-        { path: "histoirePara2", label: "Histoire — paragraphe 2", type: "textarea" },
-        { path: "histoireImage", label: "Image « Histoire »", type: "image" },
-        { path: "histoireBadgeStrong", label: "Badge — titre", type: "text" },
-        { path: "histoireBadgeText", label: "Badge — texte", type: "text" },
-        { path: "visionTitle", label: "Vision — titre", type: "text" },
-        { path: "visionText", label: "Vision — texte", type: "textarea" },
-        { path: "missionTitle", label: "Mission — titre", type: "text" },
-        { path: "missionText", label: "Mission — texte", type: "textarea" },
-        { path: "engagementsTitle", label: "Engagements — titre", type: "text" },
-        { path: "engagements", label: "Liste des engagements", type: "liststr" },
-        { path: "valeursTitle", label: "Valeurs — titre", type: "text" },
-        { path: "valeurs", label: "Liste des valeurs", type: "listobj",
-          item: [
-            { path: "title", label: "Titre de la valeur", type: "text" },
-            { path: "text", label: "Description", type: "textarea" }
-          ] },
-        { path: "promesse", label: "Notre promesse", type: "textarea" },
-        { path: "ctaTitle", label: "Appel à l'action — titre", type: "text" },
-        { path: "ctaText", label: "Appel à l'action — texte", type: "textarea" }
-      ]
-    },
-    {
-      key: "expertises", label: "Expertises", icon: "🎯",
-      title: "Nos expertises",
-      desc: "Les quatre expertises affichées sur les pages Services et Expertise.",
-      base: [],
-      fields: [
-        { path: "expertises", label: "Liste des expertises", type: "listobj",
-          item: [
-            { path: "title", label: "Titre", type: "text" },
-            { path: "lead", label: "Description", type: "textarea" },
-            { path: "points", label: "Points clés", type: "liststr" }
-          ] }
-      ]
-    },
-    {
-      key: "services", label: "Services", icon: "🧩",
-      title: "Page Services",
-      desc: "Bandeau, offre intégrée, approche et clients.",
-      base: ["services"],
-      fields: [
-        { path: "heroTitle", label: "Titre du bandeau", type: "textarea" },
-        { path: "heroLede", label: "Texte d'introduction", type: "textarea" },
-        { path: "offreTitle", label: "Offre intégrée — titre", type: "text" },
-        { path: "offreText", label: "Offre intégrée — texte", type: "textarea" },
-        { path: "approcheTitle", label: "Approche — titre", type: "text" },
-        { path: "approcheText", label: "Approche — texte", type: "textarea" },
-        { path: "approcheSteps", label: "Approche — étapes", type: "liststr" },
-        { path: "clientsTitle", label: "Clients — titre", type: "text" },
-        { path: "clients", label: "Liste des clients", type: "liststr" },
-        { path: "ctaTitle", label: "Appel à l'action — titre", type: "text" },
-        { path: "ctaText", label: "Appel à l'action — texte", type: "textarea" }
-      ]
-    },
-    {
-      key: "expertise", label: "Expertise", icon: "📈",
-      title: "Page Expertise",
-      desc: "Bandeau, différence et parcours d'accompagnement.",
-      base: ["expertise"],
-      fields: [
-        { path: "heroTitle", label: "Titre du bandeau", type: "textarea" },
-        { path: "heroLede", label: "Texte d'introduction", type: "textarea" },
-        { path: "differenceTitle", label: "Différence — titre", type: "textarea" },
-        { path: "differenceText", label: "Différence — texte", type: "textarea" },
-        { path: "differenceImage", label: "Différence — image", type: "image" },
-        { path: "features", label: "Différence — points", type: "listobj",
-          item: [
-            { path: "title", label: "Titre", type: "text" },
-            { path: "text", label: "Description", type: "text" }
-          ] },
-        { path: "parcoursTitle", label: "Parcours — titre", type: "text" },
-        { path: "parcours", label: "Étapes du parcours", type: "listobj",
-          item: [
-            { path: "title", label: "Titre de l'étape", type: "text" },
-            { path: "text", label: "Description", type: "textarea" }
-          ] }
-      ]
-    },
-    {
-      key: "actualites", label: "Actualités", icon: "📰",
-      title: "Page Actualités (Perspectives)",
-      desc: "Bandeau, message de la rubrique et thématiques.",
-      base: ["actualites"],
-      fields: [
-        { path: "heroTitle", label: "Titre du bandeau", type: "textarea" },
-        { path: "heroLede", label: "Texte d'introduction", type: "textarea" },
-        { path: "noticeBadge", label: "Étiquette", type: "text" },
-        { path: "noticeTitle", label: "Titre du message", type: "text" },
-        { path: "noticeText", label: "Texte du message", type: "textarea" },
-        { path: "topics", label: "Thématiques", type: "liststr" }
-      ]
-    },
-    {
-      key: "carrieres", label: "Carrières", icon: "💼",
-      title: "Page Carrières",
-      desc: "Bandeau, culture, offres d'emploi et message par défaut.",
-      base: ["carrieres"],
-      fields: [
-        { path: "heroTitle", label: "Titre du bandeau", type: "text" },
-        { path: "heroLede", label: "Texte d'introduction", type: "textarea" },
-        { path: "cultureTitle", label: "Culture — titre", type: "text" },
-        { path: "culturePara1", label: "Culture — paragraphe 1", type: "textarea" },
-        { path: "culturePara2", label: "Culture — paragraphe 2", type: "textarea" },
-        { path: "cultureImage", label: "Culture — image", type: "image" },
-        { path: "offersTitle", label: "Offres — titre de section", type: "text" },
-        { path: "offers", label: "Offres d'emploi", type: "listobj",
-          item: [
-            { path: "title", label: "Intitulé du poste", type: "text" },
-            { path: "location", label: "Lieu", type: "text" },
-            { path: "type", label: "Type de contrat", type: "text" },
-            { path: "description", label: "Description", type: "textarea" }
-          ] },
-        { path: "emptyTitle", label: "Message si aucune offre — titre", type: "text" },
-        { path: "emptyText", label: "Message si aucune offre — texte", type: "textarea" }
+        { path: "presentation", label: "Présentation", type: "textarea" },
+        { path: "positionnement", label: "Positionnement", type: "textarea" },
+        { path: "mission", label: "Mission", type: "textarea" },
+        { path: "vision", label: "Vision", type: "textarea" },
+        { path: "approche", label: "Approche", type: "textarea" },
+        { path: "ceoRole", label: "CEO — intitulé", type: "text" },
+        { path: "ceoName", label: "CEO — nom (à compléter)", type: "text" },
+        { path: "ceoPhoto", label: "CEO — photo (optionnel)", type: "image" },
+        { path: "ceoText", label: "CEO — texte de présentation", type: "textarea" },
+        { path: "signature", label: "Signature institutionnelle (à compléter)", type: "textarea" },
+        { path: "promesse", label: "Notre promesse", type: "textarea" }
       ]
     },
     {
       key: "partners", label: "Partenaires", icon: "🤝",
       title: "Section Partenaires",
-      desc: "Titre, texte et logos des partenaires (affichés sur la page d'accueil).",
+      desc: "Titre et logos des partenaires (affichés sur la page À propos).",
       base: ["partners"],
       fields: [
         { path: "title", label: "Titre de la section", type: "text" },
-        { path: "lead", label: "Texte d'introduction", type: "textarea" },
+        { path: "lead", label: "Texte d'introduction (optionnel)", type: "textarea" },
         { path: "items", label: "Logos des partenaires", type: "listobj",
           item: [
             { path: "name", label: "Nom du partenaire", type: "text" },
@@ -174,18 +64,56 @@
       ]
     },
     {
+      key: "services", label: "Nos services", icon: "🧩",
+      title: "Page Nos services",
+      desc: "Introduction, les services et leurs prestations, mode d'intervention.",
+      base: ["services"],
+      fields: [
+        { path: "intro", label: "Texte d'introduction", type: "textarea" },
+        { path: "items", label: "Services", type: "listobj",
+          item: [
+            { path: "title", label: "Titre du service", type: "text" },
+            { path: "presentation", label: "Présentation courte", type: "textarea" },
+            { path: "prestations", label: "Prestations", type: "liststr" }
+          ] },
+        { path: "modeTitle", label: "Mode d'intervention — titre", type: "text" },
+        { path: "steps", label: "Étapes d'intervention", type: "listobj",
+          item: [
+            { path: "title", label: "Titre de l'étape", type: "text" },
+            { path: "text", label: "Description", type: "textarea" }
+          ] }
+      ]
+    },
+    {
+      key: "pourquoi", label: "Pourquoi nous ?", icon: "⭐",
+      title: "Page Pourquoi nous ?",
+      desc: "Introduction, atouts et formulation synthétique.",
+      base: ["pourquoi"],
+      fields: [
+        { path: "intro", label: "Texte d'introduction", type: "textarea" },
+        { path: "atouts", label: "Atouts", type: "listobj",
+          item: [
+            { path: "title", label: "Titre de l'atout", type: "text" },
+            { path: "text", label: "Description", type: "textarea" }
+          ] },
+        { path: "synthese", label: "Formulation synthétique", type: "textarea" }
+      ]
+    },
+    {
       key: "contact", label: "Contact", icon: "✉️",
       title: "Page Contact",
-      desc: "Bandeau et coordonnées du cabinet.",
+      desc: "Introduction, coordonnées, options du formulaire et message de confirmation.",
       base: ["contact"],
       fields: [
-        { path: "heroTitle", label: "Titre du bandeau", type: "text" },
-        { path: "heroLede", label: "Texte d'introduction", type: "textarea" },
-        { path: "infoTitle", label: "Coordonnées — titre", type: "text" },
-        { path: "location", label: "Localisation", type: "text" },
+        { path: "intro", label: "Texte d'introduction", type: "textarea" },
+        { path: "location", label: "Ville & pays", type: "text" },
         { path: "email", label: "Adresse e-mail", type: "text" },
         { path: "phone", label: "Téléphone", type: "text" },
-        { path: "availability", label: "Disponibilité / horaires", type: "text" }
+        { path: "availability", label: "Disponibilité / horaires", type: "text" },
+        { path: "ctaLabel", label: "Libellé du bouton", type: "text" },
+        { path: "confirmation", label: "Message de confirmation", type: "textarea" },
+        { path: "secteurs", label: "Secteurs d'activités (liste du formulaire)", type: "liststr" },
+        { path: "motifs", label: "Motifs de contact (liste du formulaire)", type: "liststr" }
       ]
     }
   ];
