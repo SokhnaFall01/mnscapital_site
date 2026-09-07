@@ -1,0 +1,138 @@
+{
+  "site": {
+    "brandName": "MNS CAPITAL",
+    "brandTagline": "Dakar · Afrique",
+    "logo": "assets/img/logo.png",
+    "footerAbout": "Structure indépendante de conseil et d'accompagnement, basée à Dakar et tournée vers l'Afrique.",
+    "footerMotto": "Structurer, connecter, moderniser et transformer.",
+    "footerPlace": "Dakar · Afrique"
+  },
+  "apropos": {
+    "heroImage": "assets/img/reunion-conseil.jpg",
+    "heroAccroche": "Partenaire stratégique de vos ambitions en Afrique.",
+    "presentation": "MNS CAPITAL est une structure indépendante de conseil et d'accompagnement, basée à Dakar et tournée vers l'Afrique. Nous intervenons dans la structuration de projets, l'ingénierie financière, l'intermédiation stratégique, la finance digitale, ainsi que le conseil en stratégie et performance durable. Nous accompagnons les entreprises, les institutions et les porteurs de projets dans la transformation de leurs ambitions en projets structurés, finançables et créateurs de valeur.",
+    "positionnement": "MNS CAPITAL se positionne comme un partenaire stratégique capable d'intervenir de la conception d'un projet à son financement, à sa mise en œuvre et à sa transformation. La structure rapproche la stratégie, la finance et l'exécution afin d'apporter des réponses concrètes aux enjeux de croissance, de financement et de performance.",
+    "mission": "Structurer, connecter, moderniser et transformer. MNS CAPITAL accompagne ses clients par des solutions adaptées, une analyse rigoureuse et un suivi personnalisé à chaque étape décisive de leur développement.",
+    "vision": "Nous aspirons à bâtir un écosystème où les entreprises, investisseurs et institutions disposent des expertises, outils et financements nécessaires pour transformer leurs ambitions en réalisations concrètes.",
+    "approche": "Notre approche repose sur une compréhension approfondie du contexte du client, de son marché, de sa gouvernance et de ses objectifs. Chaque intervention est conçue sur mesure pour être crédible, finançable et exécutable. Elle peut associer diagnostic, analyse, structuration, mobilisation de partenaires, accompagnement à la mise en œuvre et suivi stratégique.",
+    "ceoRole": "CEO, MNS CAPITAL",
+    "ceoName": "",
+    "ceoPhoto": "",
+    "ceoText": "Fort de plus de vingt ans d'expérience dans le secteur bancaire et financier, nous avons développé une expertise solide dans l'accompagnement des entreprises et des porteurs de projets, la structuration financière et le conseil stratégique. Ce parcours nous a conduit à intervenir sur la définition et la mise en œuvre de stratégies de développement, ainsi que sur la structuration et la mobilisation de solutions de financement adaptées. À travers MNS CAPITAL, nous mettons cette expérience au service des entreprises, des institutions et des porteurs de projets, avec une approche fondée sur l'écoute, la rigueur, la confidentialité et la recherche de solutions concrètes.",
+    "signature": "",
+    "promesse": "Transformer les ambitions en projets viables, les projets en investissements et les investissements en croissance durable."
+  },
+  "partners": {
+    "title": "Ils nous ont fait confiance.",
+    "lead": "",
+    "items": [
+      { "name": "Azurtech", "logo": "assets/img/partners/azurtech.jpeg", "url": "" },
+      { "name": "Casagri", "logo": "assets/img/partners/casagri.jpeg", "url": "" },
+      { "name": "Qprost", "logo": "assets/img/partners/qprost.jpeg", "url": "" },
+      { "name": "SOTRACOM", "logo": "assets/img/partners/sotracom.png", "url": "" },
+      { "name": "EDK Groupe", "logo": "assets/img/partners/edk-groupe.png", "url": "" },
+      { "name": "Afitex", "logo": "assets/img/partners/afitex.webp", "url": "" }
+    ]
+  },
+  "services": {
+    "intro": "Des solutions financières et stratégiques qui vont jusqu'à l'exécution. MNS CAPITAL articule analyse, structuration, mise en relation et accompagnement pour sécuriser les étapes décisives des projets et aider ses clients à transformer leurs ambitions en résultats concrets.",
+    "items": [
+      {
+        "title": "Ingénierie financière",
+        "presentation": "MNS CAPITAL conçoit des solutions financières robustes, adaptées à la réalité du projet, de son marché et de ses parties prenantes.",
+        "prestations": [
+          "structuration financière de projets",
+          "modélisation financière",
+          "business plans et études de faisabilité",
+          "analyse des besoins de financement",
+          "optimisation des montages juridico-financiers",
+          "préparation des éléments nécessaires au dialogue avec les financeurs"
+        ]
+      },
+      {
+        "title": "Intermédiation stratégique",
+        "presentation": "MNS CAPITAL facilite la mise en relation entre porteurs de projets, investisseurs, banques, fonds et autres partenaires stratégiques.",
+        "prestations": [
+          "identification d'opportunités d'investissement",
+          "recherche et qualification de partenaires",
+          "levées de fonds locales et internationales",
+          "préparation des dossiers de présentation",
+          "accompagnement des négociations",
+          "suivi du processus jusqu'au closing"
+        ]
+      },
+      {
+        "title": "Finance digitale",
+        "presentation": "MNS CAPITAL accompagne les organisations dans l'intégration de solutions numériques destinées à fluidifier les opérations financières, renforcer la transparence et améliorer la traçabilité.",
+        "prestations": [
+          "digitalisation des processus financiers",
+          "solutions de paiement et d'encaissement",
+          "inclusion financière",
+          "amélioration du reporting",
+          "traçabilité des flux et des opérations",
+          "accompagnement à la modernisation des pratiques financières"
+        ]
+      },
+      {
+        "title": "Conseil en stratégie et performance durable",
+        "presentation": "MNS CAPITAL accompagne les organisations dans la définition de leur vision, l'amélioration de leur gouvernance et l'accélération d'une croissance durable.",
+        "prestations": [
+          "stratégies de développement et de croissance",
+          "organisation et gouvernance",
+          "conseil aux dirigeants",
+          "partenariats stratégiques",
+          "fusions-acquisitions",
+          "développement commercial",
+          "amélioration de la performance et création de valeur durable"
+        ]
+      }
+    ],
+    "modeTitle": "Mode d'intervention transversal",
+    "steps": [
+      { "title": "Diagnostic", "text": "comprendre les objectifs, les contraintes et les leviers de création de valeur" },
+      { "title": "Analyse", "text": "évaluer les données, le marché, les risques et les scénarios" },
+      { "title": "Structuration", "text": "concevoir l'architecture financière, stratégique et opérationnelle" },
+      { "title": "Mobilisation", "text": "identifier et engager les partenaires pertinents" },
+      { "title": "Mise en œuvre", "text": "accompagner les décisions, les négociations et l'exécution" },
+      { "title": "Suivi stratégique", "text": "mesurer les avancées et ajuster la trajectoire" }
+    ]
+  },
+  "pourquoi": {
+    "intro": "Une lecture à la fois financière, stratégique, institutionnelle et opérationnelle. MNS CAPITAL associe expertise, indépendance et proximité pour aider ses clients à prendre de meilleures décisions, structurer leurs projets et créer une valeur durable.",
+    "atouts": [
+      { "title": "Une expertise et une expérience éprouvées", "text": "Plus de vingt ans d'expérience dans les secteurs bancaire et financier permettent à MNS CAPITAL de comprendre les exigences des entreprises, des investisseurs, des banques et des institutions." },
+      { "title": "Un accompagnement personnalisé", "text": "Chaque mission part du contexte réel du client, de ses objectifs, de ses contraintes et de son niveau de maturité. Les solutions proposées sont adaptées au projet et non standardisées." },
+      { "title": "Une maîtrise des enjeux financiers et stratégiques", "text": "MNS CAPITAL croise les enjeux de financement, de gouvernance, de marché, de développement et d'exécution pour apporter une lecture globale des situations." },
+      { "title": "Une capacité à structurer et à accompagner les projets", "text": "La structure intervient au-delà de la recommandation : il contribue à rendre les projets plus lisibles, plus robustes, plus finançables et mieux préparés à leur mise en œuvre." },
+      { "title": "Une approche orientée solutions et création de valeur", "text": "L'objectif est de proposer des solutions concrètes, pertinentes et réalistes, capables de soutenir la croissance, la transformation et la performance durable des organisations." },
+      { "title": "Professionnalisme, rigueur et confidentialité", "text": "Les missions sont conduites avec exigence, intégrité, discrétion et respect des intérêts des clients. La confidentialité et l'indépendance doivent être présentées comme des principes essentiels de la relation." }
+    ],
+    "synthese": "Pourquoi MNS CAPITAL ? Parce que nous réunissons l'expertise financière, la vision stratégique et la capacité d'exécution nécessaires pour faire avancer les projets. Nous privilégions une relation de confiance, un accompagnement de proximité et des solutions sur mesure, dans le respect des exigences de rigueur, de confidentialité et d'indépendance."
+  },
+  "contact": {
+    "intro": "Parlons de votre prochain projet. Vous souhaitez structurer un projet, rechercher un financement, identifier un partenaire stratégique ou renforcer la performance de votre organisation ? Échangeons sur vos objectifs et vos priorités.",
+    "location": "À renseigner (ville, pays)",
+    "email": "À renseigner (adresse e-mail professionnelle)",
+    "phone": "À renseigner (numéro de téléphone)",
+    "availability": "À renseigner (horaires ou modalités de disponibilité)",
+    "ctaLabel": "Parler à un conseiller",
+    "confirmation": "Merci pour votre message. Notre équipe l'examinera avec attention et reviendra vers vous dans les meilleurs délais.",
+    "secteurs": [
+      "PME et Grandes entreprises",
+      "Banques",
+      "Institution Mutualiste Financière",
+      "Fonds d'investissement",
+      "Porteurs de projets",
+      "Bailleurs internationaux",
+      "Autres"
+    ],
+    "motifs": [
+      "Ingénierie financière",
+      "Intermédiation stratégique",
+      "Finance digitale",
+      "Conseil en stratégie et performance durable",
+      "Partenariat",
+      "Autre demande"
+    ]
+  }
+}

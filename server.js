@@ -25,11 +25,45 @@ const SESSION_SECRET =
   process.env.SESSION_SECRET || crypto.randomBytes(32).toString("hex");
 
 const CONTENT_FILE = path.join(__dirname, "content.json");
+const DEFAULT_FILE = path.join(__dirname, "content.default.json");
 const IMG_DIR = path.join(__dirname, "public", "assets", "img");
 
 /* --- Utilitaires de contenu --- */
+// Contenu par défaut embarqué dans l'image (structure toujours à jour).
+function readDefault() {
+  try {
+    return JSON.parse(fs.readFileSync(DEFAULT_FILE, "utf-8"));
+  } catch (e) {
+    return {};
+  }
+}
+// Fusion profonde : les valeurs de `override` l'emportent ; les clés
+// absentes sont complétées par `base` (les tableaux sont remplacés).
+function deepMerge(base, override) {
+  if (Array.isArray(base) || Array.isArray(override)) {
+    return override !== undefined ? override : base;
+  }
+  if (base && typeof base === "object" && override && typeof override === "object") {
+    var out = {};
+    Object.keys(base).forEach(function (k) { out[k] = base[k]; });
+    Object.keys(override).forEach(function (k) {
+      out[k] = deepMerge(base[k], override[k]);
+    });
+    return out;
+  }
+  return override !== undefined ? override : base;
+}
+// Lit content.json et le complète par la version par défaut : ainsi un
+// fichier ancien ou incomplet n'entraîne plus d'erreur de rendu.
 function readContent() {
-  return JSON.parse(fs.readFileSync(CONTENT_FILE, "utf-8"));
+  var def = readDefault();
+  var file;
+  try {
+    file = JSON.parse(fs.readFileSync(CONTENT_FILE, "utf-8"));
+  } catch (e) {
+    return def;
+  }
+  return deepMerge(def, file);
 }
 function writeContent(data) {
   // Sauvegarde de sécurité avant écriture
