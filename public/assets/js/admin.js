@@ -34,6 +34,7 @@
       base: ["apropos"],
       fields: [
         { path: "heroImage", label: "Image du bandeau", type: "image" },
+        { path: "heroAccroche", label: "Accroche (grand titre du bandeau)", type: "text" },
         { path: "presentation", label: "Présentation", type: "textarea" },
         { path: "positionnement", label: "Positionnement", type: "textarea" },
         { path: "mission", label: "Mission", type: "textarea" },

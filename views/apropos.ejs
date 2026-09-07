@@ -7,6 +7,7 @@
     <div class="container">
       <div class="hero__inner reveal">
         <span class="hero__eyebrow">À propos</span>
+        <% if (c.apropos.heroAccroche) { %><h1 class="hero__accroche"><%= c.apropos.heroAccroche %></h1><% } %>
         <p class="hero__statement"><%= c.apropos.presentation %></p>
         <div class="hero__actions">
           <a href="/services" class="btn btn--gold">Nos services
