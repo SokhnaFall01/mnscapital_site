@@ -28,6 +28,31 @@
       ]
     },
     {
+      key: "apparence", label: "Apparence", icon: "🅰️",
+      title: "Apparence — taille du texte",
+      desc: "Ajustez la taille des titres et du texte sur tout le site. Modifications appliquées partout après enregistrement.",
+      base: ["theme"],
+      fields: [
+        { path: "titleScale", label: "Taille des titres", type: "choice",
+          hint: "S'applique aux grands titres, titres de sections et de cartes.",
+          options: [
+            { value: "0.9", label: "Compact" },
+            { value: "1", label: "Normal (par défaut)" },
+            { value: "1.1", label: "Grand" },
+            { value: "1.2", label: "Très grand" },
+            { value: "1.35", label: "Maximum" }
+          ] },
+        { path: "bodyScale", label: "Taille du texte courant", type: "choice",
+          hint: "S'applique aux paragraphes et descriptions.",
+          options: [
+            { value: "0.9", label: "Compact" },
+            { value: "1", label: "Normal (par défaut)" },
+            { value: "1.1", label: "Grand" },
+            { value: "1.2", label: "Très grand" }
+          ] }
+      ]
+    },
+    {
       key: "apropos", label: "À propos", icon: "🏛️",
       title: "Page À propos",
       desc: "Présentation, positionnement, mission, vision, approche, CEO et promesse.",
@@ -137,6 +162,29 @@
     input.value = container[field.path] != null ? container[field.path] : "";
     input.addEventListener("input", function () { container[field.path] = input.value; });
     wrap.appendChild(input);
+    return wrap;
+  }
+
+  /* --- Champ « choix » (menu déroulant) --- */
+  function buildChoice(container, field) {
+    var wrap = el("div", "field");
+    var lab = el("label"); lab.textContent = field.label; wrap.appendChild(lab);
+    var sel = el("select");
+    var current = container[field.path] != null ? String(container[field.path]) : "";
+    field.options.forEach(function (opt) {
+      var o = el("option");
+      o.value = String(opt.value);
+      o.textContent = opt.label;
+      if (String(opt.value) === current) o.selected = true;
+      sel.appendChild(o);
+    });
+    // valeur par défaut si aucune ne correspond
+    if (!field.options.some(function (o) { return String(o.value) === current; }) && field.options.length) {
+      container[field.path] = field.options[0].value;
+    }
+    sel.addEventListener("change", function () { container[field.path] = sel.value; });
+    wrap.appendChild(sel);
+    if (field.hint) { var h = el("p", "field-hint"); h.textContent = field.hint; wrap.appendChild(h); }
     return wrap;
   }
 
@@ -267,6 +315,7 @@
     group.fields.forEach(function (field) {
       var node;
       if (field.type === "image") node = buildImage(container, field);
+      else if (field.type === "choice") node = buildChoice(container, field);
       else if (field.type === "liststr") node = buildListStr(container, field);
       else if (field.type === "listobj") node = buildListObj(container, field);
       else node = buildScalar(container, field);

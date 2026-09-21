@@ -7,6 +7,10 @@
     "footerMotto": "Structurer, connecter, moderniser et transformer.",
     "footerPlace": "Dakar · Afrique"
   },
+  "theme": {
+    "titleScale": "1",
+    "bodyScale": "1"
+  },
   "apropos": {
     "heroImage": "assets/img/reunion-conseil.jpg",
     "heroAccroche": "Partenaire stratégique de vos ambitions en Afrique.",
@@ -26,12 +30,36 @@
     "title": "Ils nous ont fait confiance.",
     "lead": "",
     "items": [
-      { "name": "Azurtech", "logo": "assets/img/partners/azurtech.jpeg", "url": "" },
-      { "name": "Casagri", "logo": "assets/img/partners/casagri.jpeg", "url": "" },
-      { "name": "Qprost", "logo": "assets/img/partners/qprost.jpeg", "url": "" },
-      { "name": "SOTRACOM", "logo": "assets/img/partners/sotracom.png", "url": "" },
-      { "name": "EDK Groupe", "logo": "assets/img/partners/edk-groupe.png", "url": "" },
-      { "name": "Afitex", "logo": "assets/img/partners/afitex.webp", "url": "" }
+      {
+        "name": "Azurtech",
+        "logo": "assets/img/partners/azurtech.jpeg",
+        "url": ""
+      },
+      {
+        "name": "Casagri",
+        "logo": "assets/img/partners/casagri.jpeg",
+        "url": ""
+      },
+      {
+        "name": "Qprost",
+        "logo": "assets/img/partners/qprost.jpeg",
+        "url": ""
+      },
+      {
+        "name": "SOTRACOM",
+        "logo": "assets/img/partners/sotracom.png",
+        "url": ""
+      },
+      {
+        "name": "EDK Groupe",
+        "logo": "assets/img/partners/edk-groupe.png",
+        "url": ""
+      },
+      {
+        "name": "Afitex",
+        "logo": "assets/img/partners/afitex.webp",
+        "url": ""
+      }
     ]
   },
   "services": {
@@ -89,23 +117,59 @@
     ],
     "modeTitle": "Mode d'intervention transversal",
     "steps": [
-      { "title": "Diagnostic", "text": "comprendre les objectifs, les contraintes et les leviers de création de valeur" },
-      { "title": "Analyse", "text": "évaluer les données, le marché, les risques et les scénarios" },
-      { "title": "Structuration", "text": "concevoir l'architecture financière, stratégique et opérationnelle" },
-      { "title": "Mobilisation", "text": "identifier et engager les partenaires pertinents" },
-      { "title": "Mise en œuvre", "text": "accompagner les décisions, les négociations et l'exécution" },
-      { "title": "Suivi stratégique", "text": "mesurer les avancées et ajuster la trajectoire" }
+      {
+        "title": "Diagnostic",
+        "text": "comprendre les objectifs, les contraintes et les leviers de création de valeur"
+      },
+      {
+        "title": "Analyse",
+        "text": "évaluer les données, le marché, les risques et les scénarios"
+      },
+      {
+        "title": "Structuration",
+        "text": "concevoir l'architecture financière, stratégique et opérationnelle"
+      },
+      {
+        "title": "Mobilisation",
+        "text": "identifier et engager les partenaires pertinents"
+      },
+      {
+        "title": "Mise en œuvre",
+        "text": "accompagner les décisions, les négociations et l'exécution"
+      },
+      {
+        "title": "Suivi stratégique",
+        "text": "mesurer les avancées et ajuster la trajectoire"
+      }
     ]
   },
   "pourquoi": {
     "intro": "Une lecture à la fois financière, stratégique, institutionnelle et opérationnelle. MNS CAPITAL associe expertise, indépendance et proximité pour aider ses clients à prendre de meilleures décisions, structurer leurs projets et créer une valeur durable.",
     "atouts": [
-      { "title": "Une expertise et une expérience éprouvées", "text": "Plus de vingt ans d'expérience dans les secteurs bancaire et financier permettent à MNS CAPITAL de comprendre les exigences des entreprises, des investisseurs, des banques et des institutions." },
-      { "title": "Un accompagnement personnalisé", "text": "Chaque mission part du contexte réel du client, de ses objectifs, de ses contraintes et de son niveau de maturité. Les solutions proposées sont adaptées au projet et non standardisées." },
-      { "title": "Une maîtrise des enjeux financiers et stratégiques", "text": "MNS CAPITAL croise les enjeux de financement, de gouvernance, de marché, de développement et d'exécution pour apporter une lecture globale des situations." },
-      { "title": "Une capacité à structurer et à accompagner les projets", "text": "La structure intervient au-delà de la recommandation : il contribue à rendre les projets plus lisibles, plus robustes, plus finançables et mieux préparés à leur mise en œuvre." },
-      { "title": "Une approche orientée solutions et création de valeur", "text": "L'objectif est de proposer des solutions concrètes, pertinentes et réalistes, capables de soutenir la croissance, la transformation et la performance durable des organisations." },
-      { "title": "Professionnalisme, rigueur et confidentialité", "text": "Les missions sont conduites avec exigence, intégrité, discrétion et respect des intérêts des clients. La confidentialité et l'indépendance doivent être présentées comme des principes essentiels de la relation." }
+      {
+        "title": "Une expertise et une expérience éprouvées",
+        "text": "Plus de vingt ans d'expérience dans les secteurs bancaire et financier permettent à MNS CAPITAL de comprendre les exigences des entreprises, des investisseurs, des banques et des institutions."
+      },
+      {
+        "title": "Un accompagnement personnalisé",
+        "text": "Chaque mission part du contexte réel du client, de ses objectifs, de ses contraintes et de son niveau de maturité. Les solutions proposées sont adaptées au projet et non standardisées."
+      },
+      {
+        "title": "Une maîtrise des enjeux financiers et stratégiques",
+        "text": "MNS CAPITAL croise les enjeux de financement, de gouvernance, de marché, de développement et d'exécution pour apporter une lecture globale des situations."
+      },
+      {
+        "title": "Une capacité à structurer et à accompagner les projets",
+        "text": "La structure intervient au-delà de la recommandation : il contribue à rendre les projets plus lisibles, plus robustes, plus finançables et mieux préparés à leur mise en œuvre."
+      },
+      {
+        "title": "Une approche orientée solutions et création de valeur",
+        "text": "L'objectif est de proposer des solutions concrètes, pertinentes et réalistes, capables de soutenir la croissance, la transformation et la performance durable des organisations."
+      },
+      {
+        "title": "Professionnalisme, rigueur et confidentialité",
+        "text": "Les missions sont conduites avec exigence, intégrité, discrétion et respect des intérêts des clients. La confidentialité et l'indépendance doivent être présentées comme des principes essentiels de la relation."
+      }
     ],
     "synthese": "Pourquoi MNS CAPITAL ? Parce que nous réunissons l'expertise financière, la vision stratégique et la capacité d'exécution nécessaires pour faire avancer les projets. Nous privilégions une relation de confiance, un accompagnement de proximité et des solutions sur mesure, dans le respect des exigences de rigueur, de confidentialité et d'indépendance."
   },

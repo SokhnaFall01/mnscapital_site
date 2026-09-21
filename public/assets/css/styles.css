@@ -670,3 +670,27 @@ p { margin: 0 0 1rem; }
   font-size: .74rem; letter-spacing: .2em; text-transform: uppercase;
   color: rgba(255,255,255,.6);
 }
+
+/* --------------------------------------------------------------------- */
+/* Échelles de typographie pilotées depuis l'admin (Apparence)           */
+/* --title-scale : agrandit/réduit les titres ; --body-scale : le texte  */
+/* --------------------------------------------------------------------- */
+:root { --title-scale: 1; --body-scale: 1; }
+
+/* Texte courant */
+body { font-size: calc(1rem * var(--body-scale)); }
+.hero__statement { font-size: calc(clamp(.92rem, 1.15vw, 1.02rem) * var(--body-scale)); }
+.page-hero__lede { font-size: calc(1.12rem * var(--body-scale)); }
+.lead-text { font-size: calc(clamp(1.2rem, 2.2vw, 1.6rem) * var(--body-scale)); }
+.card .card__text { font-size: calc(.98rem * var(--body-scale)); }
+.expertise__lead { font-size: calc(1rem * var(--body-scale)); }
+.expertise__points li { font-size: calc(.95rem * var(--body-scale)); }
+
+/* Titres */
+.section-head h2 { font-size: calc(clamp(1.9rem, 3.4vw, 2.7rem) * var(--title-scale)); }
+.hero__accroche { font-size: calc(clamp(2.1rem, 4.4vw, 3.4rem) * var(--title-scale)); }
+.page-hero h1 { font-size: calc(clamp(2rem, 4.4vw, 3.1rem) * var(--title-scale)); }
+.card h3 { font-size: calc(1.25rem * var(--title-scale)); }
+.expertise h3 { font-size: calc(1.4rem * var(--title-scale)); }
+.tstep h3 { font-size: calc(1.18rem * var(--title-scale)); }
+.quote blockquote { font-size: calc(clamp(1.4rem, 2.8vw, 2.1rem) * var(--title-scale)); }
