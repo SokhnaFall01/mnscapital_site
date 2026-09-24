@@ -24,6 +24,10 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "mnscapital2026";
 const SESSION_SECRET =
   process.env.SESSION_SECRET || crypto.randomBytes(32).toString("hex");
 
+// Version des fichiers statiques : change à chaque démarrage (donc à chaque
+// déploiement) pour forcer le navigateur à recharger CSS/JS (anti-cache).
+const ASSET_VERSION = Date.now();
+
 const CONTENT_FILE = path.join(__dirname, "content.json");
 const DEFAULT_FILE = path.join(__dirname, "content.default.json");
 const IMG_DIR = path.join(__dirname, "public", "assets", "img");
@@ -81,6 +85,12 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true, limit: "2mb" }));
 app.use(express.json({ limit: "2mb" }));
+
+// Rend la version des assets disponible dans tous les gabarits (anti-cache).
+app.use(function (req, res, next) {
+  res.locals.v = ASSET_VERSION;
+  next();
+});
 
 app.use(
   session({

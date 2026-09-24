@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/styles.css" />
-  <link rel="stylesheet" href="/assets/css/admin.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=<%= typeof v !== "undefined" ? v : "" %>" />
+  <link rel="stylesheet" href="/assets/css/admin.css?v=<%= typeof v !== "undefined" ? v : "" %>" />
   <link rel="icon" href="/assets/img/logo.png" />
 </head>
 <body class="admin-body">
@@ -39,6 +39,6 @@
 
   <!-- Contenu actuel injecté pour l'éditeur -->
   <script id="content-data" type="application/json"><%- JSON.stringify(c) %></script>
-  <script src="/assets/js/admin.js"></script>
+  <script src="/assets/js/admin.js?v=<%= typeof v !== "undefined" ? v : "" %>"></script>
 </body>
 </html>
