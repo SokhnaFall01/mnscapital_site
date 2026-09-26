@@ -90,6 +90,22 @@
     </div>
   </section>
 
+  <!-- ================= CARTE / ANCRAGE ================= -->
+  <% if (c.apropos.mapImage) { %>
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="gold-rule"></div>
+        <span class="kicker">Présence</span>
+        <% if (c.apropos.mapTitle) { %><h2><%= c.apropos.mapTitle %></h2><% } %>
+      </div>
+      <div class="map-band reveal">
+        <img src="/<%= c.apropos.mapImage %>" alt="Carte de l'Afrique — présence de MNS CAPITAL" loading="lazy" />
+      </div>
+    </div>
+  </section>
+  <% } %>
+
   <!-- ================= NOTRE PROMESSE ================= -->
   <section class="section section--navy">
     <div class="container">

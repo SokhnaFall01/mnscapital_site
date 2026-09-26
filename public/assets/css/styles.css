@@ -700,3 +700,7 @@ body { font-size: calc(1rem * var(--body-scale)); }
 .expertise h3 { font-size: calc(1.4rem * var(--title-scale)); }
 .tstep h3 { font-size: calc(1.18rem * var(--title-scale)); }
 .quote blockquote { font-size: calc(clamp(1.4rem, 2.8vw, 2.1rem) * var(--title-scale)); }
+
+/* Carte / ancrage (page À propos) */
+.map-band { max-width: 720px; margin: 0 auto; text-align: center; }
+.map-band img { width: 100%; height: auto; }

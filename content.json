@@ -24,7 +24,9 @@
     "ceoPhoto": "",
     "ceoText": "Fort de plus de vingt ans d'expérience dans le secteur bancaire et financier, nous avons développé une expertise solide dans l'accompagnement des entreprises et des porteurs de projets, la structuration financière et le conseil stratégique. Ce parcours nous a conduit à intervenir sur la définition et la mise en œuvre de stratégies de développement, ainsi que sur la structuration et la mobilisation de solutions de financement adaptées. À travers MNS CAPITAL, nous mettons cette expérience au service des entreprises, des institutions et des porteurs de projets, avec une approche fondée sur l'écoute, la rigueur, la confidentialité et la recherche de solutions concrètes.",
     "signature": "",
-    "promesse": "Transformer les ambitions en projets viables, les projets en investissements et les investissements en croissance durable."
+    "promesse": "Transformer les ambitions en projets viables, les projets en investissements et les investissements en croissance durable.",
+    "mapImage": "assets/img/carte-afrique.png",
+    "mapTitle": "Un ancrage africain"
   },
   "partners": {
     "title": "Ils nous ont fait confiance.",
@@ -175,9 +177,9 @@
   },
   "contact": {
     "intro": "Parlons de votre prochain projet. Vous souhaitez structurer un projet, rechercher un financement, identifier un partenaire stratégique ou renforcer la performance de votre organisation ? Échangeons sur vos objectifs et vos priorités.",
-    "location": "À renseigner (ville, pays)",
-    "email": "À renseigner (adresse e-mail professionnelle)",
-    "phone": "À renseigner (numéro de téléphone)",
+    "location": "Dakar, Sénégal",
+    "email": "magattesamb@mnscapital.net",
+    "phone": "+221 33 860 77 48 / +221 77 289 92 64",
     "availability": "À renseigner (horaires ou modalités de disponibilité)",
     "ctaLabel": "Parler à un conseiller",
     "confirmation": "Merci pour votre message. Notre équipe l'examinera avec attention et reviendra vers vous dans les meilleurs délais.",
@@ -197,6 +199,7 @@
       "Conseil en stratégie et performance durable",
       "Partenariat",
       "Autre demande"
-    ]
+    ],
+    "website": "www.mnscapital.net"
   }
 }
