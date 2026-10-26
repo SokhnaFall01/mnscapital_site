@@ -69,51 +69,42 @@
     "items": [
       {
         "title": "Ingénierie financière",
-        "presentation": "MNS CAPITAL conçoit des solutions financières robustes, adaptées à la réalité du projet, de son marché et de ses parties prenantes.",
+        "presentation": "MNS CAPITAL conçoit et structure des solutions financières adaptées aux besoins des entreprises et des porteurs de projets, en tenant compte de leurs objectifs et de leurs capacités financières.",
         "prestations": [
-          "structuration financière de projets",
-          "modélisation financière",
-          "business plans et études de faisabilité",
-          "analyse des besoins de financement",
-          "optimisation des montages juridico-financiers",
-          "préparation des éléments nécessaires au dialogue avec les financeurs"
+          "Structuration financière et modélisation des projets",
+          "Élaboration de business plans et études de faisabilité",
+          "Analyse des besoins de financement et optimisation des montages financiers",
+          "Préparation des dossiers de financement à destination des partenaires financiers"
         ]
       },
       {
         "title": "Intermédiation stratégique",
-        "presentation": "MNS CAPITAL facilite la mise en relation entre porteurs de projets, investisseurs, banques, fonds et autres partenaires stratégiques.",
+        "presentation": "MNS CAPITAL facilite la mise en relation entre les porteurs de projets, les investisseurs, les banques et les partenaires stratégiques afin de favoriser la concrétisation des opportunités d’investissement.",
         "prestations": [
-          "identification d'opportunités d'investissement",
-          "recherche et qualification de partenaires",
-          "levées de fonds locales et internationales",
-          "préparation des dossiers de présentation",
-          "accompagnement des négociations",
-          "suivi du processus jusqu'au closing"
+          "Identification et mise en relation avec des investisseurs et partenaires stratégiques",
+          "Accompagnement des opérations de levée de fonds locales et internationales",
+          "Assistance dans les négociations avec les partenaires financiers",
+          "Coordination et suivi des opérations jusqu’à leur conclusion"
         ]
       },
       {
         "title": "Finance digitale",
-        "presentation": "MNS CAPITAL accompagne les organisations dans l'intégration de solutions numériques destinées à fluidifier les opérations financières, renforcer la transparence et améliorer la traçabilité.",
+        "presentation": "MNS CAPITAL accompagne les organisations dans la modernisation de leurs opérations financières grâce à des solutions numériques adaptées à leurs besoins et à leurs objectifs de performance.",
         "prestations": [
-          "digitalisation des processus financiers",
-          "solutions de paiement et d'encaissement",
-          "inclusion financière",
-          "amélioration du reporting",
-          "traçabilité des flux et des opérations",
-          "accompagnement à la modernisation des pratiques financières"
+          "Digitalisation des processus et opérations financières",
+          "Mise en place de solutions de paiement et d’encaissement",
+          "Développement de solutions favorisant l’inclusion financière",
+          "Amélioration du reporting et de la traçabilité des flux financiers"
         ]
       },
       {
         "title": "Conseil en stratégie et performance durable",
-        "presentation": "MNS CAPITAL accompagne les organisations dans la définition de leur vision, l'amélioration de leur gouvernance et l'accélération d'une croissance durable.",
+        "presentation": "MNS CAPITAL accompagne les organisations dans la définition de leurs orientations stratégiques, l’amélioration de leur fonctionnement et la mise en œuvre de stratégies de croissance durables.",
         "prestations": [
-          "stratégies de développement et de croissance",
-          "organisation et gouvernance",
-          "conseil aux dirigeants",
-          "partenariats stratégiques",
-          "fusions-acquisitions",
-          "développement commercial",
-          "amélioration de la performance et création de valeur durable"
+          "Élaboration de stratégies de développement et de croissance",
+          "Amélioration de l’organisation et de la gouvernance",
+          "Conseil aux dirigeants et développement de partenariats stratégiques",
+          "Accompagnement des opérations de fusion-acquisition et amélioration de la performance durable"
         ]
       }
     ],
@@ -200,6 +191,7 @@
       "Partenariat",
       "Autre demande"
     ],
-    "website": "www.mnscapital.net"
+    "website": "www.mnscapital.net",
+    "phoneCommercial": "+221 71 101 38 38"
   }
 }

@@ -426,11 +426,9 @@ p { margin: 0 0 1rem; }
   max-width: 100%;
   max-height: 56px;          /* même hauteur visuelle pour tous les logos */
   object-fit: contain;
-  filter: grayscale(100%);   /* uniformise des logos d'origines variées */
-  opacity: .75;
-  transition: filter .25s ease, opacity .25s ease;
+  transition: transform .25s ease;
 }
-.partner:hover img { filter: none; opacity: 1; }
+.partner:hover img { transform: scale(1.04); }
 
 /* --------------------------------------------------------------------- */
 /* Citation / promesse                                                   */
@@ -704,3 +702,19 @@ body { font-size: calc(1rem * var(--body-scale)); }
 /* Carte / ancrage (page À propos) */
 .map-band { max-width: 720px; margin: 0 auto; text-align: center; }
 .map-band img { width: 100%; height: auto; }
+
+/* --------------------------------------------------------------------- */
+/* Textes justifiés (paragraphes de contenu)                             */
+/* --------------------------------------------------------------------- */
+.lead-text,
+.card__text,
+.expertise__lead,
+.hero__statement,
+.page-hero__lede,
+.ceo-block p,
+.notice p,
+.split p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}

@@ -137,6 +137,7 @@
         { path: "location", label: "Ville & pays", type: "text" },
         { path: "email", label: "Adresse e-mail", type: "text" },
         { path: "phone", label: "Téléphone", type: "text" },
+        { path: "phoneCommercial", label: "Téléphone commercial", type: "text" },
         { path: "website", label: "Site web", type: "text" },
         { path: "ctaLabel", label: "Libellé du bouton", type: "text" },
         { path: "confirmation", label: "Message de confirmation", type: "textarea" },
